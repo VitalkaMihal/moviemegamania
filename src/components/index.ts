@@ -1,1 +1,3 @@
-import React from "react";
+import { RequareAuth } from "./RequareAuth";
+
+export { RequareAuth };
