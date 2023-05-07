@@ -1,11 +1,11 @@
 import React from "react";
-import { Link, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ROUTE } from "routes";
 
-export const FavoritesPage = () => {
+export const TrendsPage = () => {
   return (
     <div>
-      <h1>FavoritesPage</h1>
+      <h1>TrendsPage</h1>
       <Link to={ROUTE.HOME}>home</Link>
     </div>
   );
