@@ -1,4 +1,4 @@
-import { RequareAuth } from "components";
+import { RequireAuth } from "components";
 import { DetailsPage, FavoritesPage, HomePage } from "pages";
 import { Route, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
 import { MainTemplate } from "templates";
@@ -8,7 +8,7 @@ export const router = createBrowserRouter(
     <Route path="/" element={<MainTemplate />}>
       <Route index element={<HomePage />} />
       <Route path="details/:id" element={<DetailsPage />} />
-      <Route element={<RequareAuth />}>
+      <Route element={<RequireAuth />}>
         <Route path="favorites" element={<FavoritesPage />} />
       </Route>
     </Route>,
