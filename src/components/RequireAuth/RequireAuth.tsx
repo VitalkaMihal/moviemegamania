@@ -3,6 +3,6 @@ import { Navigate } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 
 export const RequireAuth = () => {
-  const isAuth = false;
+  const isAuth = true;
   return isAuth ? <Outlet /> : <Navigate to={"/"} />;
 };
