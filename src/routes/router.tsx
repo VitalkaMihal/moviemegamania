@@ -1,6 +1,6 @@
 import { RequireAuth } from "components";
 import {
-  AccountPage,
+  SettingsPage,
   DetailsPage,
   FavoritesPage,
   HomePage,
@@ -19,7 +19,7 @@ export const router = createBrowserRouter(
     <Route path="/" element={<MainTemplate />}>
       <Route index element={<HomePage />} />
       <Route path={ROUTE.DETAILS} element={<DetailsPage />} />
-      <Route path={ROUTE.ACCOUNT} element={<AccountPage />} />
+      <Route path={ROUTE.SETTINGS} element={<SettingsPage />} />
       <Route path={ROUTE.RESET_PASSWORD} element={<ResetPasswordPage />} />
       <Route path={ROUTE.SEARCH} element={<SearchPage />} />
       <Route path={ROUTE.SING_IN} element={<SingInPage />} />

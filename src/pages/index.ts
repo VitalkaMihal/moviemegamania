@@ -4,7 +4,7 @@ import { DetailsPage } from "./DetailsPage";
 import { SearchPage } from "./SearchPage";
 import { SingInPage } from "./SingInPage";
 import { SingUpPage } from "./SingUpPage";
-import { AccountPage } from "./AccountPage";
+import { SettingsPage } from "./SettingsPage";
 import { TrendsPage } from "./TrendsPage";
 import { ResetPasswordPage } from "./ResetPasswordPage";
 
@@ -15,7 +15,7 @@ export {
   SearchPage,
   SingInPage,
   SingUpPage,
-  AccountPage,
+  SettingsPage,
   TrendsPage,
   ResetPasswordPage,
 };

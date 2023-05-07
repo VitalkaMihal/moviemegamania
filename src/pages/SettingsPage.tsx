@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ROUTE } from "routes";
 
-export const AccountPage = () => {
+export const SettingsPage = () => {
   return (
     <div>
-      <h1>AccountPage</h1>
+      <h1>SettingsPage</h1>
       <Link to={ROUTE.HOME}>home</Link>
     </div>
   );

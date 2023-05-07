@@ -12,7 +12,7 @@ export const HomePage = () => {
       <Link to={ROUTE.RESET_PASSWORD}>reset-password</Link>
       <Link to={ROUTE.TRENDS}>trends</Link>
       <Link to={ROUTE.SEARCH}>search</Link>
-      <Link to={ROUTE.ACCOUNT}>account</Link>
+      <Link to={ROUTE.SETTINGS}>account</Link>
       <Link to={generatePath(ROUTE.DETAILS, { movie: "42" })}>
         <h1>DetailsPage</h1>
       </Link>
