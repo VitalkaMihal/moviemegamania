@@ -1,1 +1,3 @@
-import React from "react";
+import { Movies, Movie } from "./types";
+
+export type { Movies, Movie };
