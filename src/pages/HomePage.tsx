@@ -1,3 +1,4 @@
+import { MovieCard } from "components";
 import React, { useEffect } from "react";
 import { Link, generatePath } from "react-router-dom";
 import { ROUTE } from "routes";
@@ -16,11 +17,13 @@ export const HomePage = () => {
       <h1>HomePage</h1>
       {isLoading && <div>spinner</div>}
       {error && <div>{error}</div>}
-      <ul>
+      <>
         {movies.map((movie) => (
-          <li key={movie.Title}>{movie.Title}</li>
+          <div key={movie.Title}>
+            <MovieCard poster={movie.Poster} title={movie.Title} type={movie.Type} />
+          </div>
         ))}
-      </ul>
+      </>
       <Link to={ROUTE.FAVORITES}>favorites</Link>
       <Link to={ROUTE.SING_IN}>sing-in</Link>
       <Link to={ROUTE.SING_UP}>sing-up</Link>
