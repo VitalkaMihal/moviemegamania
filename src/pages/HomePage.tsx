@@ -1,26 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { Link, generatePath } from "react-router-dom";
 import { ROUTE } from "routes";
-import { fetchMovies, moviesSelectors, useAppDispatch } from "store";
-import { useDispatch, useSelector } from "react-redux";
-import { json } from "stream/consumers";
+import { fetchMovies, moviesSelectors, useAppDispatch, useAppSelector } from "store";
 
 export const HomePage = () => {
-  const [films, setFilms] = useState<any>({});
+  const { movies } = useAppSelector(moviesSelectors);
+  const dispatch = useAppDispatch();
 
-  // const {movies} = useAppDispatch(moviesSelectors);
   useEffect(() => {
-    fetch("https://www.omdbapi.com/?s=war&page=1&apikey=22808c07")
-      .then((response) => response.json())
-      .then(setFilms);
-  }, []);
-
-  console.log(films.Search);
+    dispatch(fetchMovies());
+  }, [dispatch]);
 
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
       <h1>HomePage</h1>
-      {/* <img src={movies && movies.Search[0]?.Poster} alt="" height={200} width={150} /> */}
+      <ul>
+        {movies.map((movie) => (
+          <li key={movie.Title}>{movie.Title}</li>
+        ))}
+      </ul>
       <Link to={ROUTE.FAVORITES}>favorites</Link>
       <Link to={ROUTE.SING_IN}>sing-in</Link>
       <Link to={ROUTE.SING_UP}>sing-up</Link>
