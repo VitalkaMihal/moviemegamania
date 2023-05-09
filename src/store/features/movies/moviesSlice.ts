@@ -1,18 +1,30 @@
 import { AsyncThunk, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
-import { Movie } from "types";
+import axios, { AxiosError } from "axios";
+import { Movie, Movies } from "types";
 
 interface MoviesState {
   movies: Movie[];
+  isLoading: boolean;
+  error: string | null;
 }
 
-export const fetchMovies = createAsyncThunk("movies/fetchMovies", async () => {
-  const moviesData = await axios.get("https://www.omdbapi.com/?s=war&page=1&apikey=22808c07");
-  return moviesData;
-});
+export const fetchMovies = createAsyncThunk<Movies, undefined, { rejectValue: string }>(
+  "movies/fetchMovies",
+  async (_, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.get("https://www.omdbapi.com/?s=war&page=1&apikey=22808c07");
+      return data;
+    } catch (error) {
+      const { message } = error as AxiosError;
+      return rejectWithValue(message);
+    }
+  },
+);
 
 const initialState: MoviesState = {
   movies: [],
+  isLoading: false,
+  error: null,
 };
 
 const moviesSlice = createSlice({
@@ -20,11 +32,19 @@ const moviesSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers(builder) {
-    builder.addCase(fetchMovies.pending, (state, action) => {});
-    builder.addCase(fetchMovies.fulfilled, (state, { payload }) => {
-      state.movies = payload.data.Search;
+    builder.addCase(fetchMovies.pending, (state) => {
+      state.isLoading = true;
     });
-    builder.addCase(fetchMovies.rejected, (state, action) => {});
+    builder.addCase(fetchMovies.fulfilled, (state, { payload }) => {
+      state.movies = payload.Search;
+      state.isLoading = false;
+    });
+    builder.addCase(fetchMovies.rejected, (state, { payload }) => {
+      if (payload) {
+        state.isLoading = false;
+        state.error = payload;
+      }
+    });
   },
 });
 
