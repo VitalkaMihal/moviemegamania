@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Link, generatePath } from "react-router-dom";
 import { ROUTE } from "routes";
 import { fetchMovies, moviesSelectors, useAppDispatch, useAppSelector } from "store";
 
 export const HomePage = () => {
-  const { movies } = useAppSelector(moviesSelectors);
+  const { movies, isLoading, error } = useAppSelector(moviesSelectors);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -14,6 +14,8 @@ export const HomePage = () => {
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
       <h1>HomePage</h1>
+      {isLoading && <div>spinner</div>}
+      {error && <div>{error}</div>}
       <ul>
         {movies.map((movie) => (
           <li key={movie.Title}>{movie.Title}</li>

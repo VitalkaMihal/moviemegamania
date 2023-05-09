@@ -1,4 +1,4 @@
-import { AsyncThunk, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios, { AxiosError } from "axios";
 import { Movie, Movies } from "types";
 
@@ -12,7 +12,7 @@ export const fetchMovies = createAsyncThunk<Movies, undefined, { rejectValue: st
   "movies/fetchMovies",
   async (_, { rejectWithValue }) => {
     try {
-      const { data } = await axios.get("https://www.omdbapi.com/?s=war&page=1&apikey=22808c07");
+      const { data } = await axios.get("https://www.omdbapi.com/?s=war&page=1&apikey=b22808c07");
       return data;
     } catch (error) {
       const { message } = error as AxiosError;
