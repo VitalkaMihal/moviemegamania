@@ -1,9 +1,9 @@
 import { AsyncThunk, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import { Movies } from "types";
+import { Movie } from "types";
 
 interface MoviesState {
-  movies: any[];
+  movies: Movie[];
 }
 
 export const fetchMovies = createAsyncThunk("movies/fetchMovies", async () => {

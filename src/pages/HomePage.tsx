@@ -19,6 +19,7 @@ export const HomePage = () => {
           <li key={movie.Title}>{movie.Title}</li>
         ))}
       </ul>
+
       <Link to={ROUTE.FAVORITES}>favorites</Link>
       <Link to={ROUTE.SING_IN}>sing-in</Link>
       <Link to={ROUTE.SING_UP}>sing-up</Link>
