@@ -1,11 +1,29 @@
-import React from "react";
+import { MovieCard } from "components";
+import React, { useEffect } from "react";
 import { Link, generatePath } from "react-router-dom";
 import { ROUTE } from "routes";
+import { fetchMovies, moviesSelectors, useAppDispatch, useAppSelector } from "store";
 
 export const HomePage = () => {
+  const { movies, isLoading, error } = useAppSelector(moviesSelectors);
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(fetchMovies());
+  }, [dispatch]);
+
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
       <h1>HomePage</h1>
+      {isLoading && <div>spinner</div>}
+      {error && <div>{error}</div>}
+      <>
+        {movies.map((movie) => (
+          <div key={movie.Title}>
+            <MovieCard poster={movie.Poster} title={movie.Title} type={movie.Type} />
+          </div>
+        ))}
+      </>
       <Link to={ROUTE.FAVORITES}>favorites</Link>
       <Link to={ROUTE.SING_IN}>sing-in</Link>
       <Link to={ROUTE.SING_UP}>sing-up</Link>
