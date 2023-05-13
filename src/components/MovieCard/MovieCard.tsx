@@ -1,5 +1,5 @@
 import React from "react";
-import { Poster, StyledMovieCard, Title, Type } from "./styled";
+import { Poster, StyledMovieCard, Title, Type } from "./styles";
 
 export const MovieCard = ({ poster, title, type }: any) => {
   return (

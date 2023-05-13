@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios, { AxiosError } from "axios";
-import { Movie, Movies } from "types";
+import { transformMovieApi } from "mappers";
+import { Movie, ResponseMovie } from "types";
 
 interface MoviesState {
   movies: Movie[];
@@ -8,12 +9,12 @@ interface MoviesState {
   error: string | null;
 }
 
-export const fetchMovies = createAsyncThunk<Movies, undefined, { rejectValue: string }>(
+export const fetchMovies = createAsyncThunk<ResponseMovie, undefined, { rejectValue: string }>(
   "movies/fetchMovies",
   async (_, { rejectWithValue }) => {
     try {
       const { data } = await axios.get("https://www.omdbapi.com/?s=war&apikey=22808c07");
-      return data;
+      return transformMovieApi(data);
     } catch (error) {
       const { message } = error as AxiosError;
       return rejectWithValue(message);
@@ -36,7 +37,7 @@ const moviesSlice = createSlice({
       state.isLoading = true;
     });
     builder.addCase(fetchMovies.fulfilled, (state, { payload }) => {
-      state.movies = payload.Search;
+      state.movies = payload.search;
       state.isLoading = false;
     });
     builder.addCase(fetchMovies.rejected, (state, { payload }) => {
