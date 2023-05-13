@@ -2,10 +2,10 @@ import { MovieCard } from "components";
 import React, { useEffect } from "react";
 import { Link, generatePath } from "react-router-dom";
 import { ROUTE } from "routes";
-import { fetchMovies, moviesSelectors, useAppDispatch, useAppSelector } from "store";
+import { fetchMovies, selectMovies, useAppDispatch, useAppSelector } from "store";
 
 export const HomePage = () => {
-  const { movies, isLoading, error } = useAppSelector(moviesSelectors);
+  const { movies, isLoading, error } = useAppSelector(selectMovies);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -19,8 +19,8 @@ export const HomePage = () => {
       {error && <div>{error}</div>}
       <>
         {movies.map((movie) => (
-          <div key={movie.Title}>
-            <MovieCard poster={movie.Poster} title={movie.Title} type={movie.Type} />
+          <div key={movie.title}>
+            <MovieCard poster={movie.poster} title={movie.title} type={movie.type} />
           </div>
         ))}
       </>

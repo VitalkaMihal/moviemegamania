@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, generatePath, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { ROUTE } from "routes";
 
 export const DetailsPage = () => {
