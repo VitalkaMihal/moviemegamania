@@ -1,6 +1,6 @@
 import moviesReducer, { fetchMovies } from "./features/movies/moviesSlice";
 import { useAppDispatch, useAppSelector } from "./hooks/hooks";
-import { moviesSelectors } from "./selectors/moviesSelectors";
+import { selectMovies } from "./selectors/moviesSelectors";
 import { store } from "./store";
 import type { RootState, AppDispatch } from "./store";
 
@@ -12,5 +12,5 @@ export {
   useAppDispatch,
   RootState,
   AppDispatch,
-  moviesSelectors,
+  selectMovies,
 };

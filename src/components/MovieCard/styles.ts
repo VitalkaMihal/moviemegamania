@@ -10,7 +10,7 @@ const StyledMovieCard = styled.div`
 `;
 
 const Poster = styled.img`
-  width: 266px;
+  width: 100%;
   height: 357px;
   border-radius: 20px;
   margin-bottom: 24px;
