@@ -7,6 +7,7 @@ const StyledMovieCard = styled.div`
   height: 429px;
   font-size: 16px;
   line-height: 24px;
+  margin: 0 40px 40px 0;
 `;
 
 const Poster = styled.img`
