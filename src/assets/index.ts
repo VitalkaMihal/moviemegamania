@@ -7,6 +7,7 @@ import { ReactComponent as PixemaLight } from "./icon/pixema-light-logo.svg";
 import { ReactComponent as ShowMore } from "./icon/show-more.svg";
 import { ReactComponent as BurgerSearch } from "./icon/burger-search.svg";
 import { ReactComponent as BurgerMenu } from "./icon/burger-menu.svg";
+import { ReactComponent as Arrow } from "./icon/arrow.svg";
 
 export {
   Favorites,
@@ -18,4 +19,5 @@ export {
   ShowMore,
   BurgerSearch,
   BurgerMenu,
+  Arrow,
 };

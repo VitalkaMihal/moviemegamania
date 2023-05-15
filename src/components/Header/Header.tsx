@@ -1,5 +1,11 @@
 import React from "react";
+import { StyledHeader } from "./styles";
+import { InputForm } from "components";
 
 export const Header = () => {
-  return <div>Header</div>;
+  return (
+    <StyledHeader>
+      <InputForm />
+    </StyledHeader>
+  );
 };
