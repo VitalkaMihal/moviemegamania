@@ -11,4 +11,9 @@ const LinksContainer = styled.div`
   margin-top: 64px;
 `;
 
-export { StyledMainTemplate, LinksContainer };
+const MainContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export { StyledMainTemplate, LinksContainer, MainContainer };

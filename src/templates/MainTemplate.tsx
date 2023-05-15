@@ -1,10 +1,10 @@
 import { Favorites, HomeIcon, PixemaDark, Settings, Trends } from "assets";
-import { AsideLink, SideBar } from "components";
+import { AsideLink, Header, SideBar } from "components";
 import React from "react";
 import { Link } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import { ROUTE } from "routes";
-import { LinksContainer, StyledMainTemplate } from "./styles";
+import { LinksContainer, StyledMainTemplate, MainContainer } from "./styles";
 
 export const MainTemplate = () => {
   return (
@@ -29,9 +29,10 @@ export const MainTemplate = () => {
           </Link>
         </LinksContainer>
       </SideBar>
-      <>
+      <MainContainer>
+        <Header />
         <Outlet />
-      </>
+      </MainContainer>
     </StyledMainTemplate>
   );
 };
