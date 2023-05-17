@@ -19,18 +19,17 @@ export const HomePage = () => {
       {error && <div>{error}</div>}
       <StyledMovieCard>
         {movies.map((movie) => (
-          <div key={movie.title}>
-            <MovieCard poster={movie.poster} title={movie.title} type={movie.type} />
-          </div>
+          <Link to={generatePath(ROUTE.DETAILS, { movie: movie.imdbID })}>
+            <div key={movie.title}>
+              <MovieCard poster={movie.poster} title={movie.title} type={movie.type} />
+            </div>
+          </Link>
         ))}
       </StyledMovieCard>
       <Link to={ROUTE.SING_IN}>sing-in</Link>
       <Link to={ROUTE.SING_UP}>sing-up</Link>
       <Link to={ROUTE.RESET_PASSWORD}>reset-password</Link>
       <Link to={ROUTE.SEARCH}>search</Link>
-      <Link to={generatePath(ROUTE.DETAILS, { movie: "42" })}>
-        <h1>DetailsPage</h1>
-      </Link>
     </div>
   );
 };
