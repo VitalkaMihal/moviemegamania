@@ -1,7 +1,13 @@
 import styled from "styled-components";
 
 const StyledHeader = styled.div`
-  margin: 40px 0 56px 0;
+  display: flex;
+  height: 156px;
+  align-items: center;
 `;
 
-export { StyledHeader };
+const IconContainer = styled.div`
+  margin: 0 146px 0 64px;
+`;
+
+export { StyledHeader, IconContainer };

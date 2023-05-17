@@ -1,11 +1,15 @@
 import React from "react";
-import { StyledHeader } from "./styles";
-import { InputForm } from "components";
+import { IconContainer, StyledHeader } from "./styles";
+import { Form } from "components";
+import { PixemaDark } from "assets";
 
 export const Header = () => {
   return (
     <StyledHeader>
-      <InputForm />
+      <IconContainer>
+        <PixemaDark />
+      </IconContainer>
+      <Form />
     </StyledHeader>
   );
 };
