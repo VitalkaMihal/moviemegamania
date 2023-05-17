@@ -1,7 +1,7 @@
-import { MovieCard } from "components";
 import React, { useEffect } from "react";
 import { Link, generatePath } from "react-router-dom";
 import { ROUTE } from "routes";
+import { MovieCard } from "components";
 import { fetchMovies, selectMovies, useAppDispatch, useAppSelector } from "store";
 import { StyledMovieCard } from "./styles";
 
@@ -19,10 +19,8 @@ export const HomePage = () => {
       {error && <div>{error}</div>}
       <StyledMovieCard>
         {movies.map((movie) => (
-          <Link to={generatePath(ROUTE.DETAILS, { movie: movie.imdbID })}>
-            <div key={movie.title}>
-              <MovieCard poster={movie.poster} title={movie.title} type={movie.type} />
-            </div>
+          <Link key={movie.title} to={generatePath(ROUTE.DETAILS, { imdbID: movie.imdbID })}>
+            <MovieCard poster={movie.poster} title={movie.title} type={movie.type} />
           </Link>
         ))}
       </StyledMovieCard>

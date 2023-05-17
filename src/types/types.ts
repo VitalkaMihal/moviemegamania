@@ -26,6 +26,10 @@ interface ResponseMovie {
   response: "True";
 }
 
+interface RatingsMovieApi {
+  Source: string;
+  Value: string;
+}
 interface DetailsMovieApi {
   Title: string;
   Year: string;
@@ -41,20 +45,7 @@ interface DetailsMovieApi {
   Country: string;
   Awards: string;
   Poster: string;
-  Ratings: [
-    {
-      Source: string;
-      Value: string;
-    },
-    {
-      Source: string;
-      Value: string;
-    },
-    {
-      Source: string;
-      Value: string;
-    },
-  ];
+  Ratings: RatingsMovieApi[];
   Metascore: string;
   imdbRating: string;
   imdbVotes: string;
@@ -67,6 +58,10 @@ interface DetailsMovieApi {
   Response: "True";
 }
 
+interface RatingsMovie {
+  source: string;
+  value: string;
+}
 interface DetailsMovie {
   title: string;
   year: string;
@@ -82,20 +77,7 @@ interface DetailsMovie {
   country: string;
   awards: string;
   poster: string;
-  ratings: [
-    {
-      source: string;
-      value: string;
-    },
-    {
-      source: string;
-      value: string;
-    },
-    {
-      source: string;
-      value: string;
-    },
-  ];
+  ratings: RatingsMovie[];
   metascore: string;
   imdbRating: string;
   imdbVotes: string;

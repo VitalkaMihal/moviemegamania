@@ -9,12 +9,14 @@ interface MoviesState {
   error: string | null;
 }
 
+const pageNumber = new Date().getDate();
+
 export const fetchMovies = createAsyncThunk<ResponseMovie, undefined, { rejectValue: string }>(
   "movies/fetchMovies",
   async (_, { rejectWithValue }) => {
     try {
       const { data } = await axios.get<ResponseMovieApi>(
-        "https://www.omdbapi.com/?s=war&apikey=22808c07",
+        `https://www.omdbapi.com/?s=war&page=${pageNumber}&apikey=22808c07`,
       );
       return transformMovieApi(data);
     } catch (error) {
