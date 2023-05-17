@@ -2,7 +2,7 @@ export enum ROUTE {
   HOME = "/",
   SEARCH = "search",
   FAVORITES = "favorites",
-  DETAILS = "details/:movie",
+  DETAILS = "details/:imdbID",
   SING_IN = "sing-in",
   SING_UP = "sing-up",
   RESET_PASSWORD = "reset-password",
