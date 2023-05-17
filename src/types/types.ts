@@ -26,7 +26,7 @@ interface ResponseMovie {
   response: "True";
 }
 
-interface DetailMoviesApi {
+interface DetailsMovieApi {
   Title: string;
   Year: string;
   Rated: string;
@@ -67,7 +67,7 @@ interface DetailMoviesApi {
   Response: "True";
 }
 
-interface DetailMovies {
+interface DetailsMovie {
   title: string;
   year: string;
   rated: string;
@@ -108,4 +108,4 @@ interface DetailMovies {
   response: "True";
 }
 
-export type { MovieApi, ResponseMovieApi, Movie, ResponseMovie, DetailMoviesApi, DetailMovies };
+export type { MovieApi, ResponseMovieApi, Movie, ResponseMovie, DetailsMovieApi, DetailsMovie };
