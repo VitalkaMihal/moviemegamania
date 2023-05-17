@@ -26,4 +26,86 @@ interface ResponseMovie {
   response: "True";
 }
 
-export type { MovieApi, ResponseMovieApi, Movie, ResponseMovie };
+interface DetailMoviesApi {
+  Title: string;
+  Year: string;
+  Rated: string;
+  Released: string;
+  Runtime: string;
+  Genre: string;
+  Director: string;
+  Writer: string;
+  Actors: string;
+  Plot: string;
+  Language: string;
+  Country: string;
+  Awards: string;
+  Poster: string;
+  Ratings: [
+    {
+      Source: string;
+      Value: string;
+    },
+    {
+      Source: string;
+      Value: string;
+    },
+    {
+      Source: string;
+      Value: string;
+    },
+  ];
+  Metascore: string;
+  imdbRating: string;
+  imdbVotes: string;
+  imdbID: string;
+  Type: string;
+  DVD: string;
+  BoxOffice: string;
+  Production: string;
+  Website: string;
+  Response: "True";
+}
+
+interface DetailMovies {
+  title: string;
+  year: string;
+  rated: string;
+  released: string;
+  runtime: string;
+  genre: string;
+  director: string;
+  writer: string;
+  actors: string;
+  plot: string;
+  language: string;
+  country: string;
+  awards: string;
+  poster: string;
+  ratings: [
+    {
+      source: string;
+      value: string;
+    },
+    {
+      source: string;
+      value: string;
+    },
+    {
+      source: string;
+      value: string;
+    },
+  ];
+  metascore: string;
+  imdbRating: string;
+  imdbVotes: string;
+  imdbID: string;
+  type: string;
+  dVD: string;
+  boxOffice: string;
+  production: string;
+  website: string;
+  response: "True";
+}
+
+export type { MovieApi, ResponseMovieApi, Movie, ResponseMovie, DetailMoviesApi, DetailMovies };
