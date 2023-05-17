@@ -1,6 +1,6 @@
-import { Favorites, HomeIcon, PixemaDark, Settings, Trends } from "assets";
-import { AsideLink, Header, SideBar } from "components";
 import React from "react";
+import { Favorites, HomeIcon, Settings, Trends } from "assets";
+import { AsideLink, Header } from "components";
 import { Link } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import { ROUTE } from "routes";
@@ -9,8 +9,8 @@ import { LinksContainer, StyledMainTemplate, MainContainer } from "./styles";
 export const MainTemplate = () => {
   return (
     <StyledMainTemplate>
-      <SideBar>
-        <PixemaDark />
+      <Header />
+      <MainContainer>
         <LinksContainer>
           <Link to={ROUTE.HOME}>
             {" "}
@@ -28,9 +28,6 @@ export const MainTemplate = () => {
             <AsideLink text="Settings" icon={<Settings />} />
           </Link>
         </LinksContainer>
-      </SideBar>
-      <MainContainer>
-        <Header />
         <Outlet />
       </MainContainer>
     </StyledMainTemplate>
