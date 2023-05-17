@@ -4,7 +4,7 @@ import { Colors } from "ui";
 const StyledForm = styled.form`
   display: flex;
   justify-content: space-between;
-  width: 70%;
+  width: 100%;
   height: 56px;
   background: ${Colors.Graphite};
   border-radius: 10px;
