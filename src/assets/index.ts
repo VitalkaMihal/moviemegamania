@@ -8,6 +8,7 @@ import { ReactComponent as ShowMore } from "./icon/show-more.svg";
 import { ReactComponent as BurgerSearch } from "./icon/burger-search.svg";
 import { ReactComponent as BurgerMenu } from "./icon/burger-menu.svg";
 import { ReactComponent as Arrow } from "./icon/arrow.svg";
+import { ReactComponent as Dot } from "./icon/dot.svg";
 
 export {
   Favorites,
@@ -20,4 +21,5 @@ export {
   BurgerSearch,
   BurgerMenu,
   Arrow,
+  Dot,
 };
