@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { transformDetailsMovie } from "mappers";
 import { useParams } from "react-router-dom";
 import { DetailsMovie } from "types";
-import { MovieCard } from "components";
+import { Badge, MovieCard, Recommendations } from "components";
 import {
   StyledDetailsPage,
   AddToFavorite,
@@ -11,8 +11,14 @@ import {
   GenreContainer,
   Genre,
   DotContainer,
+  RatingContainer,
+  PlotContainer,
+  MovieInfoContainer,
+  MovieInfoName,
+  MovieInfoValue,
 } from "./styles";
 import { Dot, Favorites } from "assets";
+import { Colors } from "ui";
 
 export const DetailsPage = () => {
   const { imdbID } = useParams();
@@ -43,8 +49,32 @@ export const DetailsPage = () => {
             </Genre>
           ))}
         </GenreContainer>
-
         <MovieTitle>{details.title}</MovieTitle>
+        <RatingContainer>
+          <Badge color={Colors.Green}>{details.imdbRating}</Badge>
+          <Badge color={Colors.Graphite}>IMDb {details.imdbRating}</Badge>
+          <Badge color={Colors.Graphite}>{details.runtime}</Badge>
+        </RatingContainer>
+        <PlotContainer>{details.plot}</PlotContainer>
+        <MovieInfoContainer>
+          <MovieInfoName>Year</MovieInfoName>
+          <MovieInfoValue>{details.year}</MovieInfoValue>
+          <MovieInfoName>Released</MovieInfoName>
+          <MovieInfoValue>{details.released}</MovieInfoValue>
+          <MovieInfoName>BoxOffice</MovieInfoName>
+          <MovieInfoValue>{details.boxOffice}</MovieInfoValue>
+          <MovieInfoName>Country</MovieInfoName>
+          <MovieInfoValue>{details.country}</MovieInfoValue>
+          <MovieInfoName>Production</MovieInfoName>
+          <MovieInfoValue>{details.production}</MovieInfoValue>
+          <MovieInfoName>Actors</MovieInfoName>
+          <MovieInfoValue>{details.actors}</MovieInfoValue>
+          <MovieInfoName>Director</MovieInfoName>
+          <MovieInfoValue>{details.director}</MovieInfoValue>
+          <MovieInfoName>Writers</MovieInfoName>
+          <MovieInfoValue>{details.writer}</MovieInfoValue>
+        </MovieInfoContainer>
+        <Recommendations />
       </MovieInfo>
     </StyledDetailsPage>
   );
