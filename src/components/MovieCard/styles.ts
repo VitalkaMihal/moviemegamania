@@ -3,6 +3,7 @@ import styled from "styled-components";
 const StyledMovieCard = styled.div`
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
   width: 266px;
   height: 429px;
   font-size: 16px;
