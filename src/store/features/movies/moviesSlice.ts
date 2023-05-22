@@ -7,16 +7,39 @@ interface MoviesState {
   movies: Movie[];
   isLoading: boolean;
   error: string | null;
+  totalResults: string | null;
+  showMore: boolean;
 }
 
-const pageNumber = new Date().getDate();
+const initialState: MoviesState = {
+  movies: [],
+  isLoading: false,
+  error: null,
+  totalResults: null,
+  showMore: false,
+};
+
+const movieRandom = [
+  "war",
+  "drive",
+  "car",
+  "dog",
+  "marvel",
+  "batman",
+  "cup",
+  "now",
+  "hitman",
+  "cat",
+];
 
 export const fetchMovies = createAsyncThunk<ResponseMovie, undefined, { rejectValue: string }>(
   "movies/fetchMovies",
   async (_, { rejectWithValue }) => {
     try {
       const { data } = await axios.get<ResponseMovieApi>(
-        `https://www.omdbapi.com/?s=war&page=${pageNumber}&apikey=22808c07`,
+        `https://www.omdbapi.com/?s=${
+          movieRandom[Math.round(Math.random() * 10) - 1]
+        }&page=${Math.ceil(Math.random() * 10)}&apikey=22808c07`,
       );
       return transformMovieApi(data);
     } catch (error) {
@@ -26,23 +49,26 @@ export const fetchMovies = createAsyncThunk<ResponseMovie, undefined, { rejectVa
   },
 );
 
-const initialState: MoviesState = {
-  movies: [],
-  isLoading: false,
-  error: null,
-};
-
 const moviesSlice = createSlice({
   name: "movies",
   initialState,
-  reducers: {},
+  reducers: {
+    showMoreButton: (state) => {
+      state.showMore = true;
+    },
+  },
   extraReducers(builder) {
     builder.addCase(fetchMovies.pending, (state) => {
       state.isLoading = true;
       state.error = null;
     });
     builder.addCase(fetchMovies.fulfilled, (state, { payload }) => {
-      state.movies = payload.search;
+      if (state.showMore) {
+        state.movies.push(...payload.search);
+      } else {
+        state.movies = payload.search;
+      }
+      state.totalResults = payload.totalResults;
       state.isLoading = false;
     });
     builder.addCase(fetchMovies.rejected, (state, { payload }) => {
@@ -55,3 +81,5 @@ const moviesSlice = createSlice({
 });
 
 export default moviesSlice.reducer;
+
+export const { showMoreButton } = moviesSlice.actions;

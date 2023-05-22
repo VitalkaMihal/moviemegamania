@@ -1,8 +1,13 @@
 import styled from "styled-components";
 
-const StyledMovieCard = styled.div`
+const StyledHomePage = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const MovieCards = styled.div`
   display: flex;
   flex-wrap: wrap;
 `;
 
-export { StyledMovieCard };
+export { MovieCards, StyledHomePage };
