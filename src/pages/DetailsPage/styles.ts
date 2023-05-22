@@ -3,7 +3,6 @@ import { BODY, Colors, H1 } from "ui";
 
 const StyledDetailsPage = styled.div`
   display: flex;
-  height: 100vh;
   ${BODY};
   color: ${Colors.White};
 `;
@@ -51,7 +50,7 @@ const MovieInfoContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 6fr;
   grid-template-rows: repeat(8, 24px);
-  column-gap: 20px;
+  row-gap: 20px;
 `;
 
 const MovieInfoName = styled.div`

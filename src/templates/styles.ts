@@ -9,6 +9,8 @@ const StyledMainTemplate = styled.div`
 `;
 
 const LinksContainer = styled.div`
+  position: sticky;
+  top: 156px;
   margin: 0 186px 0 65px;
 `;
 
@@ -16,4 +18,16 @@ const MainContainer = styled.div`
   display: flex;
 `;
 
-export { StyledMainTemplate, LinksContainer, MainContainer };
+const AsideContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+const AllRightsReserved = styled.div`
+  position: sticky;
+  bottom: 64px;
+  margin-left: 65px;
+`;
+
+export { StyledMainTemplate, LinksContainer, MainContainer, AsideContainer, AllRightsReserved };

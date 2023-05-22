@@ -6,5 +6,6 @@ import { Input } from "./Input/Input";
 import { MovieCard } from "./MovieCard/MovieCard";
 import { Recommendations } from "./Recommendations/Recommendations";
 import { RequireAuth } from "./RequireAuth/RequireAuth";
+import { ShowMore } from "./ShowMore/ShowMore";
 
-export { RequireAuth, MovieCard, AsideLink, Header, Form, Input, Badge, Recommendations };
+export { RequireAuth, MovieCard, AsideLink, Header, Form, Input, Badge, Recommendations, ShowMore };
