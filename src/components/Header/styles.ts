@@ -3,6 +3,7 @@ import { Colors } from "ui";
 
 const StyledHeader = styled.div`
   position: sticky;
+  z-index: 2;
   top: 0;
   display: flex;
   height: 156px;

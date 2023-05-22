@@ -39,7 +39,7 @@ export const fetchMovies = createAsyncThunk<ResponseMovie, undefined, { rejectVa
       const { data } = await axios.get<ResponseMovieApi>(
         `https://www.omdbapi.com/?s=${
           movieRandom[Math.round(Math.random() * 10) - 1]
-        }&page=${Math.ceil(Math.random() * 10)}&apikey=22808c07`,
+        }&page=${Math.ceil(Math.random() * 5)}&apikey=22808c07`,
       );
       return transformMovieApi(data);
     } catch (error) {
