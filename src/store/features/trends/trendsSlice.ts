@@ -17,7 +17,7 @@ const initialState: TrendsState = {
   totalResults: null,
 };
 
-const movieRandom = ["war", "car", "dog"];
+const movieRandom = ["war", "summer", "dog"];
 
 export const fetchTrends = createAsyncThunk<ResponseMovie, undefined, { rejectValue: string }>(
   "trends/fetchTrends",

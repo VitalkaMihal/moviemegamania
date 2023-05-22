@@ -3,6 +3,7 @@ import { transformDetailsMovie } from "mappers";
 import { useParams } from "react-router-dom";
 import { DetailsMovie } from "types";
 import { Badge, MovieCard, Recommendations } from "components";
+import { addToFavoritesPage, selectFavorites, useAppDispatch, useAppSelector } from "store";
 import {
   StyledDetailsPage,
   AddToFavorite,
@@ -23,16 +24,29 @@ import { Colors } from "ui";
 export const DetailsPage = () => {
   const { imdbID } = useParams();
   const [details, setDetails] = useState({} as DetailsMovie);
+  const { favoritesImdbID } = useAppSelector(selectFavorites);
+
   useEffect(() => {
     fetch(`https://www.omdbapi.com/?i=${imdbID}&apikey=22808c07`)
       .then((response) => response.json())
       .then((response) => transformDetailsMovie(response))
       .then(setDetails);
   }, [imdbID]);
+
+  const dispatch = useAppDispatch();
+
+  const handleFavorites = () => {
+    dispatch(addToFavoritesPage(details));
+  };
+
   return (
     <StyledDetailsPage>
       <MovieCard poster={details.poster}>
-        <AddToFavorite>
+        <AddToFavorite
+          onClick={handleFavorites}
+          imdbID={details.imdbID}
+          favoritesImdbID={favoritesImdbID}
+        >
           <Favorites />
         </AddToFavorite>
       </MovieCard>
