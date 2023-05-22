@@ -12,6 +12,14 @@ const AddToFavorite = styled.button`
   height: 56px;
   background-color: ${Colors.Graphite};
   border-radius: 10px;
+  :hover {
+    cursor: pointer;
+    svg {
+      path {
+        fill: ${Colors.White};
+      }
+    }
+  }
 `;
 
 const MovieInfo = styled.div`
