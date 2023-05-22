@@ -7,16 +7,16 @@ interface MoviesState {
   movies: Movie[];
   isLoading: boolean;
   error: string | null;
-  totalResults: string | null;
   showMore: boolean;
+  firstLoading: boolean;
 }
 
 const initialState: MoviesState = {
   movies: [],
   isLoading: false,
   error: null,
-  totalResults: null,
   showMore: false,
+  firstLoading: true,
 };
 
 const movieRandom = [
@@ -63,13 +63,15 @@ const moviesSlice = createSlice({
       state.error = null;
     });
     builder.addCase(fetchMovies.fulfilled, (state, { payload }) => {
-      if (state.showMore) {
+      if (state.firstLoading) {
+        state.movies = payload.search;
+      } else if (state.showMore) {
         state.movies.push(...payload.search);
       } else {
-        state.movies = payload.search;
       }
-      state.totalResults = payload.totalResults;
       state.isLoading = false;
+      state.showMore = false;
+      state.firstLoading = false;
     });
     builder.addCase(fetchMovies.rejected, (state, { payload }) => {
       if (payload) {

@@ -4,14 +4,14 @@ import { transformMovieApi } from "mappers";
 import { Movie, ResponseMovie, ResponseMovieApi } from "types";
 
 interface TrendsState {
-  movies: Movie[];
+  trends: Movie[];
   isLoading: boolean;
   error: string | null;
   totalResults: string | null;
 }
 
 const initialState: TrendsState = {
-  movies: [],
+  trends: [],
   isLoading: false,
   error: null,
   totalResults: null,
@@ -20,7 +20,7 @@ const initialState: TrendsState = {
 const movieRandom = ["war", "car", "dog"];
 
 export const fetchTrends = createAsyncThunk<ResponseMovie, undefined, { rejectValue: string }>(
-  "movies/fetchMovies",
+  "trends/fetchTrends",
   async (_, { rejectWithValue }) => {
     try {
       const { data } = await axios.get<ResponseMovieApi>(
@@ -37,7 +37,7 @@ export const fetchTrends = createAsyncThunk<ResponseMovie, undefined, { rejectVa
 );
 
 const trendsSlice = createSlice({
-  name: "movies",
+  name: "trends",
   initialState,
   reducers: {},
   extraReducers(builder) {
@@ -46,7 +46,7 @@ const trendsSlice = createSlice({
       state.error = null;
     });
     builder.addCase(fetchTrends.fulfilled, (state, { payload }) => {
-      state.movies = payload.search;
+      state.trends = payload.search;
       state.totalResults = payload.totalResults;
       state.isLoading = false;
     });
