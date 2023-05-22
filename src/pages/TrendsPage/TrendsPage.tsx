@@ -19,7 +19,10 @@ export const TrendsPage = () => {
       {error && <div>{error}</div>}
       <MovieCards>
         {trends.map((trend) => (
-          <Link key={trend.title} to={generatePath(ROUTE.DETAILS, { imdbID: trend.imdbID })}>
+          <Link
+            key={trend.title}
+            to={generatePath(ROUTE.DETAILS_ON_RECOMMENDATIONS, { imdbID: trend.imdbID })}
+          >
             <MovieCard poster={trend.poster} title={trend.title} type={trend.type} />
           </Link>
         ))}

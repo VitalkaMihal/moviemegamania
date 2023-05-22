@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { moviesReducer, trendsReducer } from "store";
+import { moviesReducer, trendsReducer, favoritesReducer } from "store";
 
 export const store = configureStore({
-  reducer: { movies: moviesReducer, trends: trendsReducer },
+  reducer: { movies: moviesReducer, trends: trendsReducer, favorites: favoritesReducer },
 });
 
 export type RootState = ReturnType<typeof store.getState>;
