@@ -20,7 +20,10 @@ export const Recommendations = () => {
         {isLoading && <div>spinner</div>}
         {error && <div>{error}</div>}
         {movies.map((movie) => (
-          <Link key={movie.title} to={generatePath(ROUTE.DETAILS, { imdbID: movie.imdbID })}>
+          <Link
+            key={movie.title}
+            to={generatePath(ROUTE.DETAILS_ON_RECOMMENDATIONS, { imdbID: movie.imdbID })}
+          >
             <MovieCard poster={movie.poster} title={movie.title} type={movie.type} />
           </Link>
         ))}
