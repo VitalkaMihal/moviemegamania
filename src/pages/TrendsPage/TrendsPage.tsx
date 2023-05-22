@@ -6,7 +6,7 @@ import { ROUTE } from "routes";
 import { fetchTrends, selectTrends, useAppDispatch, useAppSelector } from "store";
 
 export const TrendsPage = () => {
-  const { movies, isLoading, error } = useAppSelector(selectTrends);
+  const { trends, isLoading, error } = useAppSelector(selectTrends);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -18,9 +18,9 @@ export const TrendsPage = () => {
       {isLoading && <div>spinner</div>}
       {error && <div>{error}</div>}
       <MovieCards>
-        {movies.map((movie) => (
-          <Link key={movie.title} to={generatePath(ROUTE.DETAILS, { imdbID: movie.imdbID })}>
-            <MovieCard poster={movie.poster} title={movie.title} type={movie.type} />
+        {trends.map((trend) => (
+          <Link key={trend.title} to={generatePath(ROUTE.DETAILS, { imdbID: trend.imdbID })}>
+            <MovieCard poster={trend.poster} title={trend.title} type={trend.type} />
           </Link>
         ))}
       </MovieCards>

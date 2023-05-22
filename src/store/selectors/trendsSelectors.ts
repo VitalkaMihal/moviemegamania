@@ -1,3 +1,3 @@
 import { RootState } from "store";
 
-export const selectTrends = (state: RootState) => state.movies;
+export const selectTrends = (state: RootState) => state.trends;
