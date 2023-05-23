@@ -21,8 +21,9 @@ const favoritesSlice = createSlice({
         state.favoritesImdbID.push(action.payload.imdbID);
       }
     },
-    deleteFromFavoritesPage: (state) => {
-      state.favorites.filter(() => true);
+    deleteFromFavoritesPage: (state, action: PayloadAction<string>) => {
+      state.favorites = state.favorites.filter((favorite) => favorite.imdbID !== action.payload);
+      state.favoritesImdbID = state.favoritesImdbID.filter((imdb) => imdb !== action.payload);
     },
   },
 });

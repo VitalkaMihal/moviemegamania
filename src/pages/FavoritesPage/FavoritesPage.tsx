@@ -13,8 +13,7 @@ export const FavoritesPage = () => {
   const dispatch = useAppDispatch();
 
   const handleDeleteFromFavorites = (e: any) => {
-    console.log(e.target.key);
-    dispatch(deleteFromFavoritesPage());
+    dispatch(deleteFromFavoritesPage(e.target.id));
   };
 
   return (
@@ -25,8 +24,8 @@ export const FavoritesPage = () => {
             <Link to={generatePath(ROUTE.DETAILS_ON_RECOMMENDATIONS, { imdbID: favorite.imdbID })}>
               <MovieCard poster={favorite.poster} title={favorite.title} type={favorite.type} />
             </Link>
-            <DeleteFromFavorites key={favorite.imdbID} onClick={handleDeleteFromFavorites}>
-              <Favorites id={favorite.imdbID} />
+            <DeleteFromFavorites id={favorite.imdbID} onClick={handleDeleteFromFavorites}>
+              <Favorites />
             </DeleteFromFavorites>
           </ContainerFavorites>
         ))}
