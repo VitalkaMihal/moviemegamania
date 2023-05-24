@@ -12,7 +12,7 @@ const StyledHeader = styled.div`
 `;
 
 const IconContainer = styled.div`
-  margin: 0 146px 0 64px;
+  width: 300px;
 `;
 
 export { StyledHeader, IconContainer };

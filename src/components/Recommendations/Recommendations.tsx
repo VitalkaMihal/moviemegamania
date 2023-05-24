@@ -1,6 +1,6 @@
 import { MovieCard } from "components";
 import React, { useEffect } from "react";
-import { Link, generatePath } from "react-router-dom";
+import { generatePath } from "react-router-dom";
 import { ROUTE } from "routes";
 import { fetchMovies, selectMovies, useAppDispatch, useAppSelector } from "store";
 import { HeaderRecommendation, RecommendationsContainer, StyledRecommendations } from "./styles";
@@ -20,12 +20,11 @@ export const Recommendations = () => {
         {isLoading && <div>spinner</div>}
         {error && <div>{error}</div>}
         {movies.map((movie) => (
-          <Link
-            key={movie.title}
-            to={generatePath(ROUTE.DETAILS_ON_RECOMMENDATIONS, { imdbID: movie.imdbID })}
-          >
-            <MovieCard poster={movie.poster} title={movie.title} type={movie.type} />
-          </Link>
+          <MovieCard
+            key={movie.imdbID}
+            movie={movie}
+            routerLink={generatePath(ROUTE.DETAILS_ON_RECOMMENDATIONS, { imdbID: movie.imdbID })}
+          />
         ))}
       </RecommendationsContainer>
     </StyledRecommendations>

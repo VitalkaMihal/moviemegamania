@@ -10,14 +10,8 @@ const StyledShowMore = styled.button`
   border-radius: 40px;
   border: none;
   :hover {
-  }
-  svg {
-    height: 16px;
+    cursor: pointer;
   }
 `;
 
-const ShowMoreText = styled.div`
-  margin-right: 12px;
-`;
-
-export { StyledShowMore, ShowMoreText };
+export { StyledShowMore };

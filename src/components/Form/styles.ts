@@ -3,9 +3,8 @@ import { Colors } from "ui";
 
 const StyledForm = styled.form`
   display: flex;
-  justify-content: space-between;
-  width: 100%;
   height: 56px;
+  width: 60%;
   background: ${Colors.Graphite};
   border-radius: 10px;
 `;
