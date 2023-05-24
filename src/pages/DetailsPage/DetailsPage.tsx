@@ -6,7 +6,6 @@ import { Badge, MovieCard, Recommendations } from "components";
 import { addToFavoritesPage, selectFavorites, useAppDispatch, useAppSelector } from "store";
 import {
   StyledDetailsPage,
-  AddToFavorite,
   MovieInfo,
   MovieTitle,
   GenreContainer,
@@ -18,7 +17,7 @@ import {
   MovieInfoName,
   MovieInfoValue,
 } from "./styles";
-import { Dot, Favorites } from "assets";
+import { Dot } from "assets";
 import { Colors } from "ui";
 
 export const DetailsPage = () => {
@@ -41,15 +40,13 @@ export const DetailsPage = () => {
 
   return (
     <StyledDetailsPage>
-      <MovieCard poster={details.poster}>
-        <AddToFavorite
-          onClick={handleFavorites}
-          imdbID={details.imdbID}
-          favoritesImdbID={favoritesImdbID}
-        >
-          <Favorites />
-        </AddToFavorite>
-      </MovieCard>
+      <MovieCard
+        movie={details}
+        isDetails
+        atFavorite={favoritesImdbID.includes(details.imdbID)}
+        onClickAdd={handleFavorites}
+        routerLink={""}
+      />
       <MovieInfo>
         <GenreContainer>
           {details.genre?.split(", ").map((genre, genreNumber, genres) => (

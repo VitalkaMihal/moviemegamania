@@ -1,37 +1,16 @@
 import styled from "styled-components";
 import { BODY, Colors, H1 } from "ui";
 
-interface IsFavorite {
-  favoritesImdbID: string[];
-  imdbID: string;
-}
-
 const StyledDetailsPage = styled.div`
   display: flex;
   ${BODY};
   color: ${Colors.White};
 `;
 
-const AddToFavorite = styled.button<IsFavorite>`
-  width: 100%;
-  height: 56px;
-  background-color: ${({ favoritesImdbID, imdbID }) =>
-    favoritesImdbID.indexOf(imdbID) === -1 ? Colors.Graphite : Colors.Secondary};
-  border-radius: 10px;
-  :hover {
-    cursor: pointer;
-    svg {
-      path {
-        fill: ${({ favoritesImdbID, imdbID }) =>
-          favoritesImdbID.indexOf(imdbID) === -1 ? Colors.White : Colors.Yellow};
-      }
-    }
-  }
-`;
-
 const MovieInfo = styled.div`
   display: flex;
   flex-direction: column;
+  padding-left: 40px;
 `;
 
 const MovieTitle = styled.h1`
@@ -78,7 +57,6 @@ const MovieInfoValue = styled.div`
 
 export {
   StyledDetailsPage,
-  AddToFavorite,
   MovieInfo,
   MovieTitle,
   GenreContainer,

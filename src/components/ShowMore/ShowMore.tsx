@@ -1,6 +1,5 @@
 import React from "react";
-import { StyledShowMore, ShowMoreText } from "./styles";
-import { ShowMoreButton } from "assets";
+import { StyledShowMore } from "./styles";
 import { fetchMovies, showMoreButton, useAppDispatch } from "store";
 
 export const ShowMore = () => {
@@ -9,10 +8,5 @@ export const ShowMore = () => {
     dispatch(showMoreButton());
     dispatch(fetchMovies());
   };
-  return (
-    <StyledShowMore onClick={handleShowMore}>
-      <ShowMoreText>Show more </ShowMoreText>
-      <ShowMoreButton />
-    </StyledShowMore>
-  );
+  return <StyledShowMore onClick={handleShowMore}>Show more</StyledShowMore>;
 };

@@ -1,20 +1,60 @@
-import React, { ReactNode } from "react";
-import { Poster, StyledMovieCard, Title, Type } from "./styles";
+import React from "react";
+import {
+  AddToFavorite,
+  DeleteFromFavorites,
+  Poster,
+  StyledMovieCard,
+  Title,
+  Type,
+  OnFavorite,
+} from "./styles";
+import { DetailsMovie, Movie } from "types";
+import { Favorites } from "assets";
+import { Link } from "react-router-dom";
 
 interface MovieCardProps {
-  poster: string;
-  title?: string;
-  type?: string;
-  children?: ReactNode;
+  movie: Movie | DetailsMovie;
+  routerLink: string;
+  isHome?: boolean;
+  isFavorite?: boolean;
+  atFavorite?: boolean;
+  isDetails?: boolean;
+  onClickAdd?: () => void;
+  onClickDel?: () => void;
 }
 
-export const MovieCard = ({ poster, title, type, children }: MovieCardProps) => {
+export const MovieCard = ({
+  movie,
+  isFavorite,
+  atFavorite,
+  isDetails,
+  isHome,
+  routerLink,
+  onClickAdd,
+  onClickDel,
+}: MovieCardProps) => {
   return (
     <StyledMovieCard>
-      <Poster src={poster} alt="Poster" />
-      {children}
-      <Title>{title}</Title>
-      <Type>{type}</Type>
+      <Link to={routerLink} style={{ textDecoration: "none" }}>
+        <Poster src={movie.poster} alt="Poster" />
+        {isHome && <Title>{movie.title}</Title>}
+        {isHome && <Type>{movie.type}</Type>}
+        {isDetails && (
+          <AddToFavorite onClick={onClickAdd} disabled={atFavorite}>
+            <Favorites />
+          </AddToFavorite>
+        )}
+      </Link>
+      {isFavorite && (
+        <DeleteFromFavorites onClick={onClickDel}>
+          <Favorites />
+        </DeleteFromFavorites>
+      )}
+      {atFavorite && (
+        <OnFavorite>
+          <Favorites />
+        </OnFavorite>
+      )}
     </StyledMovieCard>
   );
 };
