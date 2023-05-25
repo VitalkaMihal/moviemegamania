@@ -6,7 +6,7 @@ const StyledInput = styled.input`
   background: ${Colors.Graphite};
   border-radius: 10px;
   border: none;
-  width: 90%;
+  width: 100%;
   ${S1};
   color: ${Colors.Secondary};
   padding-left: 10px;

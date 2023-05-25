@@ -19,8 +19,7 @@ interface MovieCardProps {
   isFavorite?: boolean;
   atFavorite?: boolean;
   isDetails?: boolean;
-  onClickAdd?: () => void;
-  onClickDel?: () => void;
+  onClick?: () => void;
 }
 
 export const MovieCard = ({
@@ -30,8 +29,7 @@ export const MovieCard = ({
   isDetails,
   isHome,
   routerLink,
-  onClickAdd,
-  onClickDel,
+  onClick,
 }: MovieCardProps) => {
   return (
     <StyledMovieCard>
@@ -40,13 +38,13 @@ export const MovieCard = ({
         {isHome && <Title>{movie.title}</Title>}
         {isHome && <Type>{movie.type}</Type>}
         {isDetails && (
-          <AddToFavorite onClick={onClickAdd} disabled={atFavorite}>
+          <AddToFavorite onClick={onClick} disabled={atFavorite}>
             <Favorites />
           </AddToFavorite>
         )}
       </Link>
       {isFavorite && (
-        <DeleteFromFavorites onClick={onClickDel}>
+        <DeleteFromFavorites onClick={onClick}>
           <Favorites />
         </DeleteFromFavorites>
       )}
