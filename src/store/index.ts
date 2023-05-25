@@ -1,5 +1,6 @@
 import moviesReducer, { fetchMovies, showMoreButton } from "./features/movies/moviesSlice";
 import trendsReducer, { fetchTrends } from "./features/trends/trendsSlice";
+import userReducer, { fetchSignInUser, fetchSignUpUser } from "./features/user/userSlice";
 import favoritesReducer, {
   addToFavoritesPage,
   deleteFromFavoritesPage,
@@ -15,7 +16,10 @@ export {
   trendsReducer,
   moviesReducer,
   favoritesReducer,
+  userReducer,
   fetchMovies,
+  fetchSignUpUser,
+  fetchSignInUser,
   store,
   useAppSelector,
   useAppDispatch,

@@ -90,4 +90,19 @@ interface DetailsMovie {
   response: "True";
 }
 
-export type { MovieApi, ResponseMovieApi, Movie, ResponseMovie, DetailsMovieApi, DetailsMovie };
+interface AuthValue {
+  name?: string;
+  email: string;
+  password: string;
+  confirmPassword?: string;
+}
+
+export type {
+  MovieApi,
+  ResponseMovieApi,
+  Movie,
+  ResponseMovie,
+  DetailsMovieApi,
+  DetailsMovie,
+  AuthValue,
+};
