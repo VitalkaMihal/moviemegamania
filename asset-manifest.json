@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.js": "/moviemegamania/static/js/main.f854fc84.js",
-    "static/media/empty.svg": "/moviemegamania/static/media/empty.99f427301db1b60e816f9c569b709a34.svg",
-    "static/media/pixema-light-logo.svg": "/moviemegamania/static/media/pixema-light-logo.184130e54b7fdd4a0dfa4a34e25c5fb3.svg",
-    "static/media/pixema-dark-logo.svg": "/moviemegamania/static/media/pixema-dark-logo.05aabdca70a1cd8c8fe47fc597e4d38f.svg",
-    "static/media/settings.svg": "/moviemegamania/static/media/settings.b2e55f272c7fb3068505946c03bcc524.svg",
-    "static/media/trends.svg": "/moviemegamania/static/media/trends.de336f830ae1b0d1dc92d693e9787d7d.svg",
-    "static/media/home.svg": "/moviemegamania/static/media/home.2e46636a96a233b7b9f29ef5189c0c67.svg",
-    "static/media/favorites.svg": "/moviemegamania/static/media/favorites.693e8898ef23de166fb502928ce8f283.svg",
-    "index.html": "/moviemegamania/index.html",
-    "static/media/show-more.svg": "/moviemegamania/static/media/show-more.b87a6200ca5a8e8371ee0e30ead542b1.svg",
-    "static/media/burger-search.svg": "/moviemegamania/static/media/burger-search.4ba9bca17211bbef2bee3847cddd2542.svg",
-    "static/media/burger-menu.svg": "/moviemegamania/static/media/burger-menu.f93779c4af3663c0ac24796b4720a6ef.svg",
-    "static/media/arrow.svg": "/moviemegamania/static/media/arrow.6904455cac3b74428bbf45a0e219f1d2.svg",
-    "static/media/dot.svg": "/moviemegamania/static/media/dot.ddeccb6ca74e5ddd8e20b1550cc294c0.svg",
-    "main.f854fc84.js.map": "/moviemegamania/static/js/main.f854fc84.js.map"
+    "main.js": "/static/js/main.f99aaf98.js",
+    "static/media/empty.svg": "/static/media/empty.99f427301db1b60e816f9c569b709a34.svg",
+    "static/media/pixema-light-logo.svg": "/static/media/pixema-light-logo.184130e54b7fdd4a0dfa4a34e25c5fb3.svg",
+    "static/media/pixema-dark-logo.svg": "/static/media/pixema-dark-logo.05aabdca70a1cd8c8fe47fc597e4d38f.svg",
+    "static/media/settings.svg": "/static/media/settings.b2e55f272c7fb3068505946c03bcc524.svg",
+    "static/media/trends.svg": "/static/media/trends.de336f830ae1b0d1dc92d693e9787d7d.svg",
+    "static/media/home.svg": "/static/media/home.2e46636a96a233b7b9f29ef5189c0c67.svg",
+    "static/media/favorites.svg": "/static/media/favorites.693e8898ef23de166fb502928ce8f283.svg",
+    "index.html": "/index.html",
+    "static/media/show-more.svg": "/static/media/show-more.b87a6200ca5a8e8371ee0e30ead542b1.svg",
+    "static/media/burger-search.svg": "/static/media/burger-search.4ba9bca17211bbef2bee3847cddd2542.svg",
+    "static/media/burger-menu.svg": "/static/media/burger-menu.f93779c4af3663c0ac24796b4720a6ef.svg",
+    "static/media/arrow.svg": "/static/media/arrow.6904455cac3b74428bbf45a0e219f1d2.svg",
+    "static/media/dot.svg": "/static/media/dot.ddeccb6ca74e5ddd8e20b1550cc294c0.svg",
+    "main.f99aaf98.js.map": "/static/js/main.f99aaf98.js.map"
   },
   "entrypoints": [
-    "static/js/main.f854fc84.js"
+    "static/js/main.f99aaf98.js"
   ]
 }
