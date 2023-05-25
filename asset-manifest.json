@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/moviemegamania/static/js/main.d10ecc9b.js",
+    "main.js": "/moviemegamania/static/js/main.f1004b43.js",
     "static/media/empty.svg": "/moviemegamania/static/media/empty.99f427301db1b60e816f9c569b709a34.svg",
     "static/media/pixema-light-logo.svg": "/moviemegamania/static/media/pixema-light-logo.184130e54b7fdd4a0dfa4a34e25c5fb3.svg",
     "static/media/pixema-dark-logo.svg": "/moviemegamania/static/media/pixema-dark-logo.05aabdca70a1cd8c8fe47fc597e4d38f.svg",
@@ -14,9 +14,9 @@
     "static/media/burger-menu.svg": "/moviemegamania/static/media/burger-menu.f93779c4af3663c0ac24796b4720a6ef.svg",
     "static/media/arrow.svg": "/moviemegamania/static/media/arrow.6904455cac3b74428bbf45a0e219f1d2.svg",
     "static/media/dot.svg": "/moviemegamania/static/media/dot.ddeccb6ca74e5ddd8e20b1550cc294c0.svg",
-    "main.d10ecc9b.js.map": "/moviemegamania/static/js/main.d10ecc9b.js.map"
+    "main.f1004b43.js.map": "/moviemegamania/static/js/main.f1004b43.js.map"
   },
   "entrypoints": [
-    "static/js/main.d10ecc9b.js"
+    "static/js/main.f1004b43.js"
   ]
 }
