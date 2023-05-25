@@ -30,7 +30,7 @@ export const FavoritesPage = () => {
               movie={favorite}
               isFavorite
               isHome
-              onClickDel={() => handleDeleteFromFavorites(favorite.imdbID)}
+              onClick={() => handleDeleteFromFavorites(favorite.imdbID)}
               routerLink={generatePath(ROUTE.DETAILS_ON_RECOMMENDATIONS, {
                 imdbID: favorite.imdbID,
               })}

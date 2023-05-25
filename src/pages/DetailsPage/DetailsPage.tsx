@@ -14,8 +14,8 @@ import {
   RatingContainer,
   PlotContainer,
   MovieInfoContainer,
-  MovieInfoName,
-  MovieInfoValue,
+  Name,
+  Value,
 } from "./styles";
 import { Dot } from "assets";
 import { Colors } from "ui";
@@ -32,6 +32,21 @@ export const DetailsPage = () => {
       .then(setDetails);
   }, [imdbID]);
 
+  const {
+    title,
+    imdbRating,
+    runtime,
+    plot,
+    year,
+    released,
+    boxOffice,
+    country,
+    production,
+    actors,
+    director,
+    writer,
+  } = details;
+
   const dispatch = useAppDispatch();
 
   const handleFavorites = () => {
@@ -44,7 +59,7 @@ export const DetailsPage = () => {
         movie={details}
         isDetails
         atFavorite={favoritesImdbID.includes(details.imdbID)}
-        onClickAdd={handleFavorites}
+        onClick={handleFavorites}
         routerLink={""}
       />
       <MovieInfo>
@@ -60,30 +75,30 @@ export const DetailsPage = () => {
             </Genre>
           ))}
         </GenreContainer>
-        <MovieTitle>{details.title}</MovieTitle>
+        <MovieTitle>{title}</MovieTitle>
         <RatingContainer>
-          <Badge color={Colors.Green}>{details.imdbRating}</Badge>
-          <Badge color={Colors.Graphite}>IMDb {details.imdbRating}</Badge>
-          <Badge color={Colors.Graphite}>{details.runtime}</Badge>
+          <Badge color={Colors.Green}>{imdbRating}</Badge>
+          <Badge color={Colors.Graphite}>IMDb {imdbRating}</Badge>
+          <Badge color={Colors.Graphite}>{runtime}</Badge>
         </RatingContainer>
-        <PlotContainer>{details.plot}</PlotContainer>
+        <PlotContainer>{plot}</PlotContainer>
         <MovieInfoContainer>
-          <MovieInfoName>Year</MovieInfoName>
-          <MovieInfoValue>{details.year}</MovieInfoValue>
-          <MovieInfoName>Released</MovieInfoName>
-          <MovieInfoValue>{details.released}</MovieInfoValue>
-          <MovieInfoName>BoxOffice</MovieInfoName>
-          <MovieInfoValue>{details.boxOffice}</MovieInfoValue>
-          <MovieInfoName>Country</MovieInfoName>
-          <MovieInfoValue>{details.country}</MovieInfoValue>
-          <MovieInfoName>Production</MovieInfoName>
-          <MovieInfoValue>{details.production}</MovieInfoValue>
-          <MovieInfoName>Actors</MovieInfoName>
-          <MovieInfoValue>{details.actors}</MovieInfoValue>
-          <MovieInfoName>Director</MovieInfoName>
-          <MovieInfoValue>{details.director}</MovieInfoValue>
-          <MovieInfoName>Writers</MovieInfoName>
-          <MovieInfoValue>{details.writer}</MovieInfoValue>
+          <Name>Year</Name>
+          <Value>{year}</Value>
+          <Name>Released</Name>
+          <Value>{released}</Value>
+          <Name>BoxOffice</Name>
+          <Value>{boxOffice}</Value>
+          <Name>Country</Name>
+          <Value>{country}</Value>
+          <Name>Production</Name>
+          <Value>{production}</Value>
+          <Name>Actors</Name>
+          <Value>{actors}</Value>
+          <Name>Director</Name>
+          <Value>{director}</Value>
+          <Name>Writers</Name>
+          <Value>{writer}</Value>
         </MovieInfoContainer>
         <Recommendations />
       </MovieInfo>

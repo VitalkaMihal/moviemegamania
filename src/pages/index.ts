@@ -8,6 +8,7 @@ import { SettingsPage } from "./SettingsPage/SettingsPage";
 import { TrendsPage } from "./TrendsPage/TrendsPage";
 import { ResetPasswordPage } from "./ResetPasswordPage/ResetPasswordPage";
 import { MovieCards } from "./HomePage/styles";
+import { SignUpForm } from "components/SignUpForm/SignUpForm";
 
 export {
   FavoritesPage,
@@ -20,4 +21,5 @@ export {
   TrendsPage,
   ResetPasswordPage,
   MovieCards,
+  SignUpForm,
 };

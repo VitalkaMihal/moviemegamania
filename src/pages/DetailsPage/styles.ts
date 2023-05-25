@@ -47,11 +47,11 @@ const MovieInfoContainer = styled.div`
   row-gap: 20px;
 `;
 
-const MovieInfoName = styled.div`
+const Name = styled.div`
   color: ${Colors.Light};
 `;
 
-const MovieInfoValue = styled.div`
+const Value = styled.div`
   color: ${Colors.White};
 `;
 
@@ -65,6 +65,6 @@ export {
   RatingContainer,
   PlotContainer,
   MovieInfoContainer,
-  MovieInfoName,
-  MovieInfoValue,
+  Name,
+  Value,
 };
