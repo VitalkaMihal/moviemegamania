@@ -10,8 +10,6 @@ const StyledSignUp = styled.form`
   background-color: ${Colors.Dark};
   width: 574px;
   height: 732px;
-  :last-child {
-  }
 `;
 
 const Name = styled.div``;
@@ -30,4 +28,10 @@ const SignUp = styled.button`
   border-radius: 10px;
 `;
 
-export { StyledSignUp, Name, Container, SignUp };
+const SignName = styled.div`
+  ${H2};
+  color: ${Colors.White};
+  text-align: center;
+`;
+
+export { StyledSignUp, Name, Container, SignUp, SignName };
