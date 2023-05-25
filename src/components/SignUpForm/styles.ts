@@ -10,6 +10,8 @@ const StyledSignUp = styled.form`
   background-color: ${Colors.Dark};
   width: 574px;
   height: 732px;
+  :last-child {
+  }
 `;
 
 const Name = styled.div``;
