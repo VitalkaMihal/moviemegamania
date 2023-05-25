@@ -3,8 +3,9 @@ import { StyledInput } from "./styles";
 
 interface InputProps {
   placeholder?: string;
+  type?: string;
 }
 
-export const Input = ({ placeholder }: InputProps) => {
-  return <StyledInput placeholder={placeholder} />;
+export const Input = ({ placeholder, type }: InputProps) => {
+  return <StyledInput placeholder={placeholder} type={type} />;
 };
