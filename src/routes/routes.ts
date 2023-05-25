@@ -1,5 +1,5 @@
 export enum ROUTE {
-  HOME = "/",
+  HOME = "/moviemegamania",
   SEARCH = "search",
   FAVORITES = "favorites",
   DETAILS = "details/:imdbID",

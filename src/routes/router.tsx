@@ -16,7 +16,7 @@ import { ROUTE } from "./routes";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<MainTemplate />}>
+    <Route path="/moviemegamania" element={<MainTemplate />}>
       <Route index element={<HomePage />} />
       <Route path={ROUTE.DETAILS} element={<DetailsPage />} />
       <Route path={ROUTE.SETTINGS} element={<SettingsPage />} />
