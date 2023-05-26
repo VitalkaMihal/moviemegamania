@@ -6,14 +6,17 @@ interface AsideLinkProps {
   icon: any;
   text: string;
   routerLink: string;
+  pagination: boolean;
 }
 
-export const AsideLink = ({ icon, text, routerLink }: AsideLinkProps) => {
+const style = { textDecoration: "none" };
+
+export const AsideLink = ({ icon, text, routerLink, pagination }: AsideLinkProps) => {
   return (
-    <Link to={routerLink} style={{ textDecoration: "none" }}>
+    <Link to={routerLink} style={style}>
       <StyledAsideLink>
-        <IconLink>{icon}</IconLink>
-        <IconText>{text}</IconText>
+        <IconLink pagination={pagination}>{icon}</IconLink>
+        <IconText pagination={pagination}>{text}</IconText>
       </StyledAsideLink>
     </Link>
   );

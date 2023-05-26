@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Colors, S3 } from "ui";
+import { Colors } from "ui";
 
 const StyledMainTemplate = styled.div`
   display: flex;
