@@ -7,7 +7,7 @@ import { SingUpPage } from "./SingUpPage/SingUpPage";
 import { SettingsPage } from "./SettingsPage/SettingsPage";
 import { TrendsPage } from "./TrendsPage/TrendsPage";
 import { ResetPasswordPage } from "./ResetPasswordPage/ResetPasswordPage";
-import { MovieCards } from "./HomePage/styles";
+import { MovieCards, StyledHomePage } from "./HomePage/styles";
 import { SignUpForm } from "components/SignUpForm/SignUpForm";
 
 export {
@@ -22,4 +22,5 @@ export {
   ResetPasswordPage,
   MovieCards,
   SignUpForm,
+  StyledHomePage,
 };

@@ -1,12 +1,29 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { generatePath } from "react-router-dom";
 import { ROUTE } from "routes";
+import { MovieCard } from "components";
+import { selectFavorites, selectSearch, useAppSelector } from "store";
+import { MovieCards, StyledHomePage } from "pages";
 
 export const SearchPage = () => {
+  const { movies, isLoading, error } = useAppSelector(selectSearch);
+  const { favoritesImdbID } = useAppSelector(selectFavorites);
+
   return (
-    <div>
-      <h1>SearchPage</h1>
-      <Link to={ROUTE.HOME}>home</Link>
-    </div>
+    <StyledHomePage>
+      {error && <div>{error}</div>}
+      {isLoading && <div>spinner</div>}
+      <MovieCards>
+        {movies.map((movie) => (
+          <MovieCard
+            key={movie.imdbID}
+            movie={movie}
+            isHome
+            atFavorite={favoritesImdbID.includes(movie.imdbID)}
+            routerLink={generatePath(ROUTE.DETAILS, { imdbID: movie.imdbID })}
+          />
+        ))}
+      </MovieCards>
+    </StyledHomePage>
   );
 };

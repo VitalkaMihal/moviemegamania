@@ -2,19 +2,25 @@ import { StyledInput } from "components";
 import { Container, SignName, SignUp, StyledSignUp } from "components/SignUpForm/styles";
 import React from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ROUTE } from "routes";
-import { fetchSignInUser, useAppDispatch } from "store";
+import { fetchSignInUser, selectUser, useAppDispatch, useAppSelector } from "store";
 import { AuthValue } from "types";
 import { Colors } from "ui";
 
 export const SingInPage = () => {
   const { register, handleSubmit } = useForm<AuthValue>();
   const dispatch = useAppDispatch();
+  const { isLogin } = useAppSelector(selectUser);
+  const navigate = useNavigate();
 
   const onSubmit: SubmitHandler<AuthValue> = (userAuth) => {
     dispatch(fetchSignInUser(userAuth));
   };
+
+  if (isLogin) {
+    navigate("/moviemegamania");
+  }
 
   return (
     <StyledSignUp onSubmit={handleSubmit(onSubmit)}>
@@ -30,9 +36,9 @@ export const SingInPage = () => {
       <SignUp type="submit">Sign In</SignUp>
       <Link
         style={{ textDecoration: "none", color: `${Colors.Secondary}`, textAlign: "center" }}
-        to={ROUTE.SING_IN_AT_SING_UP}
+        to={ROUTE.SING_UP_AT_SIGN_IN}
       >
-        Already have an account? Sign In
+        Don't have an account? Sign In
       </Link>
     </StyledSignUp>
   );

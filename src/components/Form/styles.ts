@@ -4,7 +4,7 @@ import { Colors } from "ui";
 const StyledForm = styled.form`
   display: flex;
   height: 56px;
-  width: 60%;
+  width: calc(100% - 307px);
   background: ${Colors.Graphite};
   border-radius: 10px;
 `;

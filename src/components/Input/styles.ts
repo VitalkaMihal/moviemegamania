@@ -9,7 +9,10 @@ const StyledInput = styled.input`
   width: 100%;
   ${S1};
   color: ${Colors.Secondary};
-  padding-left: 10px;
+  padding-left: 20px;
+  :focus {
+    outline: none !important;
+  }
 `;
 
 export { StyledInput };

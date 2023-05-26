@@ -1,6 +1,7 @@
 import moviesReducer, { fetchMovies, showMoreButton } from "./features/movies/moviesSlice";
 import trendsReducer, { fetchTrends } from "./features/trends/trendsSlice";
 import userReducer, { fetchSignInUser, fetchSignUpUser } from "./features/user/userSlice";
+import searchReducer, { fetchSearch } from "./features/search/searchSlice";
 import favoritesReducer, {
   addToFavoritesPage,
   deleteFromFavoritesPage,
@@ -11,13 +12,17 @@ import { store } from "./store";
 import type { RootState, AppDispatch } from "./store";
 import { selectTrends } from "./selectors/trendsSelectors";
 import { selectFavorites } from "./selectors/favoritesSelectors";
+import { selectSearch } from "./selectors/searchSelectors";
+import { selectUser } from "./selectors/userSelectors";
 
 export {
   trendsReducer,
   moviesReducer,
   favoritesReducer,
   userReducer,
+  searchReducer,
   fetchMovies,
+  fetchSearch,
   fetchSignUpUser,
   fetchSignInUser,
   store,
@@ -32,4 +37,6 @@ export {
   selectFavorites,
   addToFavoritesPage,
   deleteFromFavoritesPage,
+  selectSearch,
+  selectUser,
 };
