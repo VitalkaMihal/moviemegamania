@@ -4,6 +4,7 @@ import { ArrowRight, UserIcon } from "assets";
 import { Colors } from "ui";
 import { Link } from "react-router-dom";
 import { ROUTE } from "routes";
+import { selectUser, useAppSelector } from "store";
 
 const linksStyle = {
   textDecoration: "none",
@@ -11,15 +12,24 @@ const linksStyle = {
 };
 
 export const UserMenu = () => {
+  const { isLogin } = useAppSelector(selectUser);
+
   return (
     <StyledUserMenu>
       <UserIconContainer>
         <UserIcon />
       </UserIconContainer>
       <UserName>
-        <Link style={linksStyle} to={ROUTE.SING_IN}>
-          Sign In
-        </Link>
+        {isLogin || (
+          <Link style={linksStyle} to={ROUTE.SING_IN}>
+            Sign In
+          </Link>
+        )}
+        {isLogin && (
+          <Link style={linksStyle} to={""}>
+            Hello
+          </Link>
+        )}
       </UserName>
       <ArrowContainer>
         <ArrowRight />
