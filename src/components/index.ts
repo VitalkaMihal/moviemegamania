@@ -8,6 +8,7 @@ import { MovieCard } from "./MovieCard/MovieCard";
 import { Recommendations } from "./Recommendations/Recommendations";
 import { RequireAuth } from "./RequireAuth/RequireAuth";
 import { ShowMore } from "./ShowMore/ShowMore";
+import { UserMenu } from "./UserMenu/UserMenu";
 
 export {
   RequireAuth,
@@ -20,4 +21,5 @@ export {
   Recommendations,
   ShowMore,
   StyledInput,
+  UserMenu,
 };

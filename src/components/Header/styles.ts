@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Colors } from "ui";
+import { Colors, S3 } from "ui";
 
 const StyledHeader = styled.div`
   position: sticky;
@@ -12,7 +12,25 @@ const StyledHeader = styled.div`
 `;
 
 const IconContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
   width: 300px;
 `;
 
-export { StyledHeader, IconContainer };
+const FormContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100% - 300px);
+`;
+
+const Back = styled.button`
+  ${S3};
+  color: ${Colors.White};
+  background-color: ${Colors.Graphite};
+  border-radius: 10px;
+  padding: 10px;
+  margin: 0 20px;
+`;
+
+export { StyledHeader, IconContainer, FormContainer, Back };

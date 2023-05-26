@@ -1,14 +1,22 @@
 import { MovieCard } from "components";
 import { MovieCards } from "pages";
 import React from "react";
-import { generatePath } from "react-router-dom";
+import { generatePath, useNavigate } from "react-router-dom";
 import { ROUTE } from "routes";
-import { deleteFromFavoritesPage, selectFavorites, useAppDispatch, useAppSelector } from "store";
-import { ContainerEmpty, ContainerFavorites } from "./styles";
+import {
+  deleteFromFavoritesPage,
+  selectFavorites,
+  selectUser,
+  useAppDispatch,
+  useAppSelector,
+} from "store";
+import { ContainerEmpty, ContainerFavorites, TextSignIn } from "./styles";
 import { Empty } from "assets";
+import { Back } from "components/Header/styles";
 
 export const FavoritesPage = () => {
   const { favorites } = useAppSelector(selectFavorites);
+  const { isLogin } = useAppSelector(selectUser);
 
   const dispatch = useAppDispatch();
 
@@ -16,28 +24,41 @@ export const FavoritesPage = () => {
     dispatch(deleteFromFavoritesPage(imdbID));
   };
 
+  const navigate = useNavigate();
+
+  const handleSignIn = () => {
+    navigate("/moviemegamania/sing-in");
+  };
+
   return (
     <div>
-      {favorites.length === 0 && (
+      {isLogin || (
+        <TextSignIn>
+          Please login to see this page<Back onClick={handleSignIn}>Sign In</Back>
+        </TextSignIn>
+      )}
+      {favorites.length === 0 && isLogin && (
         <ContainerEmpty>
           <Empty />
         </ContainerEmpty>
       )}
-      <MovieCards>
-        {favorites.map((favorite) => (
-          <ContainerFavorites key={favorite.imdbID}>
-            <MovieCard
-              movie={favorite}
-              isFavorite
-              isHome
-              onClick={() => handleDeleteFromFavorites(favorite.imdbID)}
-              routerLink={generatePath(ROUTE.DETAILS_ON_RECOMMENDATIONS, {
-                imdbID: favorite.imdbID,
-              })}
-            />
-          </ContainerFavorites>
-        ))}
-      </MovieCards>
+      {isLogin && (
+        <MovieCards>
+          {favorites.map((favorite) => (
+            <ContainerFavorites key={favorite.imdbID}>
+              <MovieCard
+                movie={favorite}
+                isFavorite
+                isHome
+                onClick={() => handleDeleteFromFavorites(favorite.imdbID)}
+                routerLink={generatePath(ROUTE.DETAILS_ON_RECOMMENDATIONS, {
+                  imdbID: favorite.imdbID,
+                })}
+              />
+            </ContainerFavorites>
+          ))}
+        </MovieCards>
+      )}
     </div>
   );
 };

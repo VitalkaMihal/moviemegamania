@@ -38,16 +38,23 @@ const userSlice = createSlice({
     builder.addCase(fetchSignUpUser.fulfilled, (state, { payload }) => {
       state.email = payload;
       state.isLogin = true;
+      alert("вы успешно зарегистрировались");
     });
-    builder.addCase(fetchSignUpUser.rejected, (state, { payload }) => {});
+    builder.addCase(fetchSignUpUser.rejected, (state, { payload }) => {
+      state.isLogin = false;
+      alert("проверьте введенные данные");
+    });
     builder.addCase(fetchSignInUser.pending, (state, { payload }) => {});
     builder.addCase(fetchSignInUser.fulfilled, (state, { payload }) => {
       if (payload._tokenResponse) {
         state.isLogin = true;
+        alert("вы успешно вошли");
       }
-      console.log(state.isLogin);
     });
-    builder.addCase(fetchSignInUser.rejected, (state, { payload }) => {});
+    builder.addCase(fetchSignInUser.rejected, (state, { payload }) => {
+      state.isLogin = false;
+      alert("проверьте введенные данные");
+    });
   },
 });
 

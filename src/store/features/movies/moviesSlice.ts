@@ -63,6 +63,7 @@ const moviesSlice = createSlice({
       state.error = null;
     });
     builder.addCase(fetchMovies.fulfilled, (state, { payload }) => {
+      state.error = null;
       if (state.firstLoading) {
         state.movies = payload.search;
       } else if (state.showMore) {

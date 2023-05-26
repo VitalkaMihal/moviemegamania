@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { moviesReducer, trendsReducer, favoritesReducer, userReducer } from "store";
+import { moviesReducer, trendsReducer, favoritesReducer, userReducer, searchReducer } from "store";
 
 export const store = configureStore({
   reducer: {
@@ -7,6 +7,7 @@ export const store = configureStore({
     trends: trendsReducer,
     favorites: favoritesReducer,
     user: userReducer,
+    search: searchReducer,
   },
 });
 

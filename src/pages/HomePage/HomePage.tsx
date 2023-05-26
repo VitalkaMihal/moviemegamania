@@ -31,10 +31,7 @@ export const HomePage = () => {
       </MovieCards>
       {isLoading && <div>spinner</div>}
       {isLoading || <ShowMore />}
-      <Link to={ROUTE.SING_IN}>sing-in</Link>
-      <Link to={ROUTE.SING_UP}>sing-up</Link>
       <Link to={ROUTE.RESET_PASSWORD}>reset-password</Link>
-      <Link to={ROUTE.SEARCH}>search</Link>
     </StyledHomePage>
   );
 };

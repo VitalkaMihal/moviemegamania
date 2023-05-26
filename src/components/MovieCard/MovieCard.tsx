@@ -11,6 +11,7 @@ import {
 import { DetailsMovie, Movie } from "types";
 import { Favorites } from "assets";
 import { Link } from "react-router-dom";
+import { Colors } from "ui";
 
 interface MovieCardProps {
   movie: Movie | DetailsMovie;
@@ -21,6 +22,11 @@ interface MovieCardProps {
   isDetails?: boolean;
   onClick?: () => void;
 }
+
+const linksStyle = {
+  textDecoration: "none",
+  color: `${Colors.White}`,
+};
 
 export const MovieCard = ({
   movie,
@@ -33,7 +39,7 @@ export const MovieCard = ({
 }: MovieCardProps) => {
   return (
     <StyledMovieCard>
-      <Link to={routerLink} style={{ textDecoration: "none" }}>
+      <Link to={routerLink} style={linksStyle}>
         <Poster src={movie.poster} alt="Poster" />
         {isHome && <Title>{movie.title}</Title>}
         {isHome && <Type>{movie.type}</Type>}
