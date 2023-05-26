@@ -49,6 +49,7 @@ const trendsSlice = createSlice({
       state.trends = payload.search;
       state.totalResults = payload.totalResults;
       state.isLoading = false;
+      state.error = null;
     });
     builder.addCase(fetchTrends.rejected, (state, { payload }) => {
       if (payload) {
