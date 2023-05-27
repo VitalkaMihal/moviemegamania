@@ -23,8 +23,8 @@ export const Header = () => {
   const debouncedValue = useDebounce(search.value);
 
   useEffect(() => {
-    dispatch(fetchSearch(debouncedValue));
     if (debouncedValue.length > 3) {
+      dispatch(fetchSearch(debouncedValue));
       navigate("/moviemegamania/search");
     }
   }, [dispatch, debouncedValue, navigate]);
