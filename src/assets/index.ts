@@ -12,6 +12,7 @@ import { ReactComponent as Dot } from "./icon/dot.svg";
 import { ReactComponent as Empty } from "./icon/empty.svg";
 import { ReactComponent as UserIcon } from "./icon/sign-in.svg";
 import { ReactComponent as ArrowRight } from "./icon/arrow-right.svg";
+import { ReactComponent as BurgerUserMenu } from "./icon/burger-user-menu.svg";
 
 export {
   Favorites,
@@ -28,4 +29,5 @@ export {
   Empty,
   UserIcon,
   ArrowRight,
+  BurgerUserMenu,
 };

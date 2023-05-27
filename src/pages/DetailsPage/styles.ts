@@ -1,10 +1,19 @@
 import styled from "styled-components";
-import { BODY, Colors, H1 } from "ui";
+import { BODY, Colors, H1, Media } from "ui";
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
 const StyledDetailsPage = styled.div`
   display: flex;
   ${BODY};
   color: ${Colors.White};
+  ${Media.MD} {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const MovieInfo = styled.div`
@@ -19,6 +28,7 @@ const MovieTitle = styled.h1`
 
 const GenreContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
 `;
 
 const Genre = styled.div`
@@ -43,8 +53,13 @@ const MovieInfoContainer = styled.div`
   margin: 40px 0 56px 0;
   display: grid;
   grid-template-columns: 1fr 6fr;
-  grid-template-rows: repeat(8, 24px);
+  grid-template-rows: repeat(8, auto);
   row-gap: 20px;
+  ${Media.MD} {
+    grid-template-columns: 1fr 4fr;
+    row-gap: 10px;
+    column-gap: 10px;
+  }
 `;
 
 const Name = styled.div`
@@ -67,4 +82,5 @@ export {
   MovieInfoContainer,
   Name,
   Value,
+  Container,
 };

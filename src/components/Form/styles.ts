@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Colors } from "ui";
+import { Colors, Media } from "ui";
 
 const StyledForm = styled.form`
   display: flex;
@@ -7,6 +7,9 @@ const StyledForm = styled.form`
   width: calc(100% - 307px);
   background: ${Colors.Graphite};
   border-radius: 10px;
+  ${Media.XXL} {
+    width: calc(100% - 106px);
+  }
 `;
 
 const ButtonFilter = styled.button`

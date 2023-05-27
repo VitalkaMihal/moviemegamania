@@ -1,6 +1,6 @@
-import { IconContainer, StyledHeader, FormContainer, Back } from "./styles";
+import { IconContainer, StyledHeader, FormContainer, Back, BurgerUserContainer } from "./styles";
 import { Form, UserMenu } from "components";
-import { PixemaDark } from "assets";
+import { BurgerUserMenu, PixemaDark } from "assets";
 import { useInput } from "hooks/useInput";
 import { ChangeEvent, useEffect } from "react";
 import { fetchSearch, useAppDispatch } from "store";
@@ -32,6 +32,9 @@ export const Header = () => {
       <FormContainer>
         <Form placeholder="search" onChange={onChange} />
         <UserMenu />
+        <BurgerUserContainer>
+          <BurgerUserMenu />
+        </BurgerUserContainer>
       </FormContainer>
     </StyledHeader>
   );

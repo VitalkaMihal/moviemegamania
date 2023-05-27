@@ -1,12 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { ROUTE } from "routes";
+import { SettingsMenu } from "components";
 
 export const SettingsPage = () => {
-  return (
-    <div>
-      <h1>SettingsPage</h1>
-      <Link to={ROUTE.HOME}>home</Link>
-    </div>
-  );
+  return <SettingsMenu />;
 };

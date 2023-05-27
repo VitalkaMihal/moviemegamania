@@ -7,6 +7,7 @@ import { StyledInput } from "./Input/styles";
 import { MovieCard } from "./MovieCard/MovieCard";
 import { Recommendations } from "./Recommendations/Recommendations";
 import { RequireAuth } from "./RequireAuth/RequireAuth";
+import { SettingsMenu } from "./Settings/Settings";
 import { ShowMore } from "./ShowMore/ShowMore";
 import { UserMenu } from "./UserMenu/UserMenu";
 
@@ -22,4 +23,5 @@ export {
   ShowMore,
   StyledInput,
   UserMenu,
+  SettingsMenu,
 };

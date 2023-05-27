@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Colors } from "ui";
+import { Colors, Media } from "ui";
 
 const StyledMainTemplate = styled.div`
   display: flex;
@@ -8,6 +8,9 @@ const StyledMainTemplate = styled.div`
   width: 95%;
   margin: 0 auto;
   padding: 0 40px;
+  ${Media.XXL} {
+    padding: 0 20px;
+  }
 `;
 
 const LinksContainer = styled.div`
@@ -29,6 +32,10 @@ const AsideContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh;
+  ${Media.XXL} {
+    position: absolute;
+    left: -300px;
+  }
 `;
 
 const AllRightsReserved = styled.div`

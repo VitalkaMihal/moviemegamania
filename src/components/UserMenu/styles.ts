@@ -1,10 +1,14 @@
 import styled from "styled-components";
-import { Colors, S3 } from "ui";
+import { Colors, Media, S3 } from "ui";
 
 const StyledUserMenu = styled.div`
   display: flex;
   justify-content: space-between;
   width: 267px;
+  ${Media.XXL} {
+    position: absolute;
+    right: -400px;
+  }
 `;
 
 const UserIconContainer = styled.div`
