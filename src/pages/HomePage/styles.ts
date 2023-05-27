@@ -8,10 +8,8 @@ const StyledHomePage = styled.div`
 
 const MovieCards = styled.div`
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
-  row-gap: 40px;
-  column-gap: 40px;
+  gap: 20px;
   ${Media.MD} {
     justify-content: center;
   }

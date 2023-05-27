@@ -13,6 +13,7 @@ import { ReactComponent as Empty } from "./icon/empty.svg";
 import { ReactComponent as UserIcon } from "./icon/sign-in.svg";
 import { ReactComponent as ArrowRight } from "./icon/arrow-right.svg";
 import { ReactComponent as BurgerUserMenu } from "./icon/burger-user-menu.svg";
+import dogy from "./image/dogy.jpeg";
 
 export {
   Favorites,
@@ -30,4 +31,5 @@ export {
   UserIcon,
   ArrowRight,
   BurgerUserMenu,
+  dogy,
 };

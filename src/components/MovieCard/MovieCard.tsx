@@ -9,7 +9,7 @@ import {
   OnFavorite,
 } from "./styles";
 import { DetailsMovie, Movie } from "types";
-import { Favorites } from "assets";
+import { Favorites, dogy } from "assets";
 import { Link } from "react-router-dom";
 import { Colors } from "ui";
 
@@ -40,7 +40,7 @@ export const MovieCard = ({
   return (
     <StyledMovieCard>
       <Link to={routerLink} style={linksStyle}>
-        <Poster src={movie.poster} alt="Poster" />
+        <Poster src={movie.poster === "N/A" ? dogy : movie.poster} alt="Poster" />
         {isHome && <Title>{movie.title}</Title>}
         {isHome && <Type>{movie.type}</Type>}
         {isDetails && (
