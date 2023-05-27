@@ -53,7 +53,7 @@ const Back = styled.button`
   margin: 0 20px;
 `;
 
-const BurgerUserContainer = styled.div`
+const BurgerUserContainer = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -68,4 +68,12 @@ const BurgerUserContainer = styled.div`
   }
 `;
 
-export { StyledHeader, IconContainer, FormContainer, Back, BurgerUserContainer };
+const IsAside = styled.div`
+  position: absolute;
+  top: 156px;
+  right: 0;
+  z-index: 3;
+  background-color: ${Colors.Black};
+`;
+
+export { StyledHeader, IconContainer, FormContainer, Back, BurgerUserContainer, IsAside };

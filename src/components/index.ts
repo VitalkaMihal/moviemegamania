@@ -1,4 +1,5 @@
 import { AsideLink } from "./AsideLink/AsideLink";
+import { AsideMenu } from "./AsideMenu/AsideMenu";
 import { Badge } from "./Badge/Badge";
 import { Form } from "./Form/Form";
 import { Header } from "./Header/Header";
@@ -24,4 +25,5 @@ export {
   StyledInput,
   UserMenu,
   SettingsMenu,
+  AsideMenu,
 };
