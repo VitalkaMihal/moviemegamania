@@ -9,7 +9,6 @@ const StyledSignUp = styled.form`
   ${H2};
   background-color: ${Colors.Dark};
   width: 574px;
-  height: 732px;
 `;
 
 const Name = styled.div``;

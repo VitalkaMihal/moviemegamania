@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Colors, S3 } from "ui";
+import { Colors, Media, S3 } from "ui";
 
 const StyledHeader = styled.div`
   position: sticky;
@@ -9,12 +9,26 @@ const StyledHeader = styled.div`
   height: 156px;
   align-items: center;
   background-color: ${Colors.Black};
+  overflow: hidden;
+  ${Media.MD} {
+    display: grid;
+    height: 216px;
+    padding: 40px;
+  }
 `;
 
 const IconContainer = styled.div`
   display: flex;
   justify-content: space-between;
   width: 300px;
+  ${Media.XXL} {
+    width: 260px;
+  }
+  ${Media.MD} {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
 `;
 
 const FormContainer = styled.div`
@@ -22,6 +36,12 @@ const FormContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   width: calc(100% - 300px);
+  ${Media.XXL} {
+    width: calc(100% - 260px);
+  }
+  ${Media.MD} {
+    width: 100%;
+  }
 `;
 
 const Back = styled.button`
@@ -33,4 +53,27 @@ const Back = styled.button`
   margin: 0 20px;
 `;
 
-export { StyledHeader, IconContainer, FormContainer, Back };
+const BurgerUserContainer = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: -200px;
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  background-color: ${Colors.PrimaryDark};
+  ${Media.XXL} {
+    position: static;
+  }
+`;
+
+const IsAside = styled.div`
+  position: absolute;
+  top: 156px;
+  right: 0;
+  z-index: 3;
+  background-color: ${Colors.Black};
+`;
+
+export { StyledHeader, IconContainer, FormContainer, Back, BurgerUserContainer, IsAside };

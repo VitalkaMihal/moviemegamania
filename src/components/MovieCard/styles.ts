@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Colors } from "ui";
+import { Colors, Media, S3 } from "ui";
 
 interface IsFavorite {
   imdbID?: string;
@@ -11,8 +11,13 @@ const StyledMovieCard = styled.div`
   flex-direction: column;
   flex-shrink: 0;
   width: 266px;
-  font-size: 16px;
-  line-height: 24px;
+  ${S3};
+  ${Media.XXL} {
+    width: 208px;
+  }
+  ${Media.MD} {
+    width: 272px;
+  }
 `;
 
 const Poster = styled.img`
@@ -20,6 +25,12 @@ const Poster = styled.img`
   height: 357px;
   border-radius: 20px;
   margin-bottom: 20px;
+  ${Media.XXL} {
+    height: 279px;
+  }
+  ${Media.MD} {
+    height: 365px;
+  }
 `;
 
 const Title = styled.div`

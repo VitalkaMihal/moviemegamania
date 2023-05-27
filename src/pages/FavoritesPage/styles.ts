@@ -15,6 +15,12 @@ const TextSignIn = styled.div`
   height: 70vh;
 `;
 
-const ContainerEmpty = styled.div``;
+const ContainerEmpty = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  height: 70vh;
+`;
 
 export { ContainerFavorites, ContainerEmpty, TextSignIn };
