@@ -1,1 +1,3 @@
-import React from "react";
+import ScrollToTop from "./ScrollToTop";
+
+export { ScrollToTop };
