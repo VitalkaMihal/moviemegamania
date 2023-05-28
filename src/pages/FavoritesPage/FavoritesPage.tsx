@@ -27,7 +27,7 @@ export const FavoritesPage = () => {
   const navigate = useNavigate();
 
   const handleSignIn = () => {
-    navigate("/moviemegamania/sing-in");
+    navigate("/sing-in");
   };
 
   return (
