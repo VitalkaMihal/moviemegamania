@@ -34,10 +34,13 @@ const Poster = styled.img`
 `;
 
 const Title = styled.div`
-  font-weight: 700;
+  padding: 0 5px;
 `;
 
-const Type = styled.div``;
+const Type = styled.div`
+  padding: 0 5px;
+`;
+
 const AddToFavorite = styled.button<IsFavorite>`
   width: 100%;
   height: 56px;

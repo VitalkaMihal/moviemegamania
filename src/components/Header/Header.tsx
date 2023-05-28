@@ -8,24 +8,26 @@ import {
 } from "./styles";
 import { AsideMenu, Form, UserMenu } from "components";
 import { BurgerUserMenu, PixemaDark } from "assets";
-import { ChangeEvent, useEffect } from "react";
+import { useEffect } from "react";
 import { fetchSearch, useAppDispatch } from "store";
 import { useNavigate } from "react-router-dom";
 import { useInput, useToggle, useWindowSize } from "hooks";
+import { useDebounce } from "hooks/useDebounce";
 
 export const Header = () => {
   const [isMenuOpen, toggleMenu] = useToggle();
   const dispatch = useAppDispatch();
-  const { input, handleInput } = useInput();
+  const search = useInput();
   const navigate = useNavigate();
-  const onChange = (prop: ChangeEvent<HTMLInputElement>) => {
-    navigate("/moviemegamania/search");
-    handleInput(prop);
-  };
+
+  const debouncedValue = useDebounce(search.value);
 
   useEffect(() => {
-    dispatch(fetchSearch(input));
-  }, [dispatch, input]);
+    if (debouncedValue.length > 2) {
+      dispatch(fetchSearch(debouncedValue));
+      navigate("/moviemegamania/search");
+    }
+  }, [dispatch, debouncedValue, navigate]);
 
   const handleBack = () => {
     navigate(-1);
@@ -41,7 +43,7 @@ export const Header = () => {
           <Back onClick={handleBack}>Back</Back>
         </IconContainer>
         <FormContainer>
-          <Form placeholder="search" onChange={onChange} />
+          <Form placeholder="search" {...search} />
           <UserMenu />
           <BurgerUserContainer onClick={toggleMenu}>
             <BurgerUserMenu />

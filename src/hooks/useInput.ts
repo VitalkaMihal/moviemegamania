@@ -1,18 +1,18 @@
 import { ChangeEvent, useCallback, useState } from "react";
 
 interface UseInputProp {
-  input: string;
-  handleInput: (event: ChangeEvent<HTMLInputElement>) => void;
+  value: string;
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const useInput = (prop?: ChangeEvent<HTMLInputElement>): UseInputProp => {
-  const [input, setInput] = useState("");
-  const handleInput = useCallback((prop: ChangeEvent<HTMLInputElement>) => {
-    setInput(prop.target.value);
+  const [value, setValue] = useState("");
+  const onChange = useCallback((prop: ChangeEvent<HTMLInputElement>) => {
+    setValue(prop.target.value);
   }, []);
 
   return {
-    input,
-    handleInput,
+    value,
+    onChange,
   };
 };
