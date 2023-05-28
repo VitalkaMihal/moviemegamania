@@ -14,7 +14,7 @@ project by Vitali Mikhalkevich
 
 ## Design
 
-<div display: "flex",  align-items: "center"> ### Figma ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)</div>
+<div display: flex,  align-items: center> ### Figma ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)</div>
 
 ## Frameworks, Platforms and Libraries
 
