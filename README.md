@@ -1,10 +1,13 @@
-# Getting Started with Create React App
+# Moviemegamania
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+project by Vitali Mikhalkevich
 
-## Available Scripts
+## About
 
-In the project directory, you can run:
+https://vitalkamihal.github.io/moviemegamania/
+<a href="">Tab to go project</a>
+
+![Product Moviemegamania](./readme/appImg.png)
 
 ### `npm start`
 
