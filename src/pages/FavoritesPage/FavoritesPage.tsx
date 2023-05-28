@@ -10,7 +10,7 @@ import {
   useAppDispatch,
   useAppSelector,
 } from "store";
-import { ContainerEmpty, ContainerFavorites, TextSignIn } from "./styles";
+import { ContainerEmpty, ContainerFavorites, StyledFavoritesPage, TextSignIn } from "./styles";
 import { Empty } from "assets";
 import { Back } from "components/Header/styles";
 
@@ -31,7 +31,7 @@ export const FavoritesPage = () => {
   };
 
   return (
-    <div>
+    <StyledFavoritesPage>
       {isLogin || (
         <TextSignIn>
           Please login to see this page<Back onClick={handleSignIn}>Sign In</Back>
@@ -42,7 +42,7 @@ export const FavoritesPage = () => {
           <Empty />
         </ContainerEmpty>
       )}
-      {isLogin && (
+      {isLogin && favorites.length > 0 && (
         <MovieCards>
           {favorites.map((favorite) => (
             <ContainerFavorites key={favorite.imdbID}>
@@ -59,6 +59,6 @@ export const FavoritesPage = () => {
           ))}
         </MovieCards>
       )}
-    </div>
+    </StyledFavoritesPage>
   );
 };
