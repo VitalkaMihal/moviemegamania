@@ -3,7 +3,7 @@ import { Colors, Media, S3 } from "ui";
 
 const StyledHeader = styled.div`
   position: sticky;
-  z-index: 2;
+  z-index: 3;
   top: 0;
   display: flex;
   height: 156px;
@@ -72,8 +72,11 @@ const IsAside = styled.div`
   position: absolute;
   top: 156px;
   right: 0;
-  z-index: 3;
+  z-index: 2;
   background-color: ${Colors.Black};
+  ${Media.MD} {
+    top: 300px;
+  }
 `;
 
 export { StyledHeader, IconContainer, FormContainer, Back, BurgerUserContainer, IsAside };
