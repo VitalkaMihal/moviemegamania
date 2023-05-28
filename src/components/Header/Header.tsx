@@ -25,7 +25,7 @@ export const Header = () => {
   useEffect(() => {
     if (debouncedValue.length > 2) {
       dispatch(fetchSearch(debouncedValue));
-      navigate("/moviemegamania/search");
+      navigate("/search");
     }
   }, [dispatch, debouncedValue, navigate]);
 
