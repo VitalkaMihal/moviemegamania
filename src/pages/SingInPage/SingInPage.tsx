@@ -4,7 +4,14 @@ import React from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { ROUTE } from "routes";
-import { fetchSignInUser, selectUser, useAppDispatch, useAppSelector } from "store";
+import {
+  fetchSignInUser,
+  selectFavorites,
+  selectUser,
+  setFavoritesPage,
+  useAppDispatch,
+  useAppSelector,
+} from "store";
 import { AuthValue } from "types";
 import { Colors } from "ui";
 
@@ -20,6 +27,9 @@ export const SingInPage = () => {
 
   if (isLogin) {
     navigate("/moviemegamania");
+    if (localStorage.length) {
+      dispatch(setFavoritesPage(JSON.parse(localStorage.favorites)));
+    }
   }
 
   return (

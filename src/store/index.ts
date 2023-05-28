@@ -5,6 +5,7 @@ import searchReducer, { fetchSearch } from "./features/search/searchSlice";
 import favoritesReducer, {
   addToFavoritesPage,
   deleteFromFavoritesPage,
+  setFavoritesPage,
 } from "./features/favorites/favoritesSlice";
 import { useAppDispatch, useAppSelector } from "./hooks/hooks";
 import { selectMovies } from "./selectors/moviesSelectors";
@@ -39,4 +40,5 @@ export {
   deleteFromFavoritesPage,
   selectSearch,
   selectUser,
+  setFavoritesPage,
 };
