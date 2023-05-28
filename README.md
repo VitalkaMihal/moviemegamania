@@ -4,8 +4,7 @@ project by Vitali Mikhalkevich
 
 ## About
 
-https://vitalkamihal.github.io/moviemegamania/
-<a href="">Tab to go project</a>
+<a href="https://vitalkamihal.github.io/moviemegamania/">Tab to go project</a>
 
 ![Product Moviemegamania](./readme/appImg.png)
 
