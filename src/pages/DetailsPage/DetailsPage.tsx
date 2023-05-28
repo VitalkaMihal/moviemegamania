@@ -3,7 +3,13 @@ import { transformDetailsMovie } from "mappers";
 import { useParams } from "react-router-dom";
 import { DetailsMovie } from "types";
 import { Badge, MovieCard, Recommendations } from "components";
-import { addToFavoritesPage, selectFavorites, useAppDispatch, useAppSelector } from "store";
+import {
+  addToFavoritesPage,
+  selectFavorites,
+  selectUser,
+  useAppDispatch,
+  useAppSelector,
+} from "store";
 import {
   StyledDetailsPage,
   MovieInfo,
@@ -25,6 +31,7 @@ export const DetailsPage = () => {
   const { imdbID } = useParams();
   const [details, setDetails] = useState({} as DetailsMovie);
   const { favoritesImdbID } = useAppSelector(selectFavorites);
+  const { isLogin } = useAppSelector(selectUser);
 
   useEffect(() => {
     fetch(`https://www.omdbapi.com/?i=${imdbID}&apikey=22808c07`)
@@ -51,7 +58,11 @@ export const DetailsPage = () => {
   const dispatch = useAppDispatch();
 
   const handleFavorites = () => {
-    dispatch(addToFavoritesPage(details));
+    if (isLogin) {
+      dispatch(addToFavoritesPage(details));
+    } else {
+      alert("чтобы добавить в избранной пожалуйста войдите или зарегистрируйтесь");
+    }
   };
 
   return (
