@@ -38,6 +38,7 @@ const userSlice = createSlice({
     builder.addCase(fetchSignUpUser.fulfilled, (state, { payload }) => {
       state.email = payload;
       state.isLogin = true;
+      localStorage.clear();
       alert("вы успешно зарегистрировались");
     });
     builder.addCase(fetchSignUpUser.rejected, (state, { payload }) => {
