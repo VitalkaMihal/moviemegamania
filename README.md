@@ -8,13 +8,15 @@ project by Vitali Mikhalkevich
 
 ![Product Moviemegamania](./readme/appImg.png)
 
+### This project was created for educational purposes. Many topics have been covered during the course. the project is not perfect but there is a reason to study further. everything develops. and this project will improve. This project uses API. The main direction of FrontEnd.
+
 # Built With
 
 #
 
 ## Design
 
-<div display: flex,  align-items: center> ### Figma ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)</div>
+### Figma ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
 
 ## Frameworks, Platforms and Libraries
 
@@ -52,8 +54,10 @@ project by Vitali Mikhalkevich
 
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+### Vitali Mikhalkevich
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+phone number: +375 25 506 63 53
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+[@LinkedLn](https://www.linkedin.com/in/%D0%B2%D0%B8%D1%82%D0%B0%D0%BB%D0%B8%D0%B9-%D0%BC%D0%B8%D1%85%D0%B0%D0%BB%D1%8C%D0%BA%D0%B5%D0%B2%D0%B8%D1%87-ba069824b/)
+
+Project Link: [https://vitalkamihal.github.io/moviemegamania/](https://vitalkamihal.github.io/moviemegamania/)
