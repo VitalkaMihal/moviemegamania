@@ -14,7 +14,11 @@ import { useNavigate } from "react-router-dom";
 import { useInput, useToggle, useWindowSize } from "hooks";
 import { useDebounce } from "hooks/useDebounce";
 
-export const Header = () => {
+interface HeaderProps {
+  isOpen?: boolean;
+}
+
+export const Header = ({ isOpen }: HeaderProps) => {
   const [isMenuOpen, toggleMenu] = useToggle();
   const dispatch = useAppDispatch();
   const search = useInput();
@@ -44,7 +48,7 @@ export const Header = () => {
         </IconContainer>
         <FormContainer>
           <Form placeholder="search" {...search} />
-          <UserMenu />
+          <UserMenu isOpen={isMenuOpen} />
           <BurgerUserContainer onClick={toggleMenu}>
             <BurgerUserMenu />
           </BurgerUserContainer>
