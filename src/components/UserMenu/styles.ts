@@ -1,13 +1,19 @@
 import styled from "styled-components";
 import { Colors, Media, S3 } from "ui";
 
-const StyledUserMenu = styled.div`
+interface UserMenuProps {
+  isOpen?: boolean;
+}
+
+const StyledUserMenu = styled.div<UserMenuProps>`
   display: flex;
   justify-content: space-between;
   width: 267px;
   ${Media.XXL} {
     position: absolute;
-    right: -400px;
+    right: ${({ isOpen }) => (isOpen ? "-30px" : "-400px")};
+    top: 400px;
+    z-index: 5;
   }
 `;
 

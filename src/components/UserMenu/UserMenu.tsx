@@ -11,11 +11,14 @@ const linksStyle = {
   color: `${Colors.White}`,
 };
 
-export const UserMenu = () => {
-  const { isLogin } = useAppSelector(selectUser);
+export interface UserMenuProps {
+  isOpen?: boolean;
+}
 
+export const UserMenu = ({ isOpen }: UserMenuProps) => {
+  const { isLogin } = useAppSelector(selectUser);
   return (
-    <StyledUserMenu>
+    <StyledUserMenu isOpen={isOpen}>
       <UserIconContainer>
         <UserIcon />
       </UserIconContainer>

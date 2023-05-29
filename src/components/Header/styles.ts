@@ -9,7 +9,6 @@ const StyledHeader = styled.div`
   height: 156px;
   align-items: center;
   background-color: ${Colors.Black};
-  overflow: hidden;
   ${Media.MD} {
     display: grid;
     height: 216px;
@@ -32,6 +31,7 @@ const IconContainer = styled.div`
 `;
 
 const FormContainer = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
