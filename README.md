@@ -52,6 +52,14 @@ project by Vitali Mikhalkevich
 
 - ### Github ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
+# The project also uses react hooks
+
+## useState(), useEffect(), useCallback(), useLocation(), useNavigate(), useDispatch(), useSelector(), useForm(), useWindowSize(), useParams()
+
+# Custom hooks
+
+## useToggle(), useAppDispatch(), useInput(), useAppSelector(), useDebounce()
+
 ## Contact
 
 ### Vitali Mikhalkevich
