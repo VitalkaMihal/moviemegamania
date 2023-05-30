@@ -11,8 +11,8 @@ const StyledUserMenu = styled.div<UserMenuProps>`
   width: 267px;
   ${Media.XXL} {
     position: absolute;
-    right: ${({ isOpen }) => (isOpen ? "-30px" : "-400px")};
-    top: 400px;
+    right: ${({ isOpen }) => (isOpen ? "60px" : "-400px")};
+    background-color: ${Colors.Black};
     z-index: 5;
   }
 `;
