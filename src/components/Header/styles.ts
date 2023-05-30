@@ -9,6 +9,7 @@ const StyledHeader = styled.div`
   height: 156px;
   align-items: center;
   background-color: ${Colors.Black};
+  overflow: hidden;
   ${Media.MD} {
     display: grid;
     height: 216px;
