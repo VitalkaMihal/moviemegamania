@@ -20,19 +20,19 @@ export const AsideMenu = () => {
         <AsideLink
           text="Trends"
           icon={<Trends />}
-          pagination={location.pathname === `/moviemegamania/${ROUTE.TRENDS}`}
+          pagination={location.pathname === ROUTE.TRENDS}
           routerLink={ROUTE.TRENDS}
         />
         <AsideLink
           text="Favorites"
           icon={<Favorites />}
-          pagination={location.pathname === `/moviemegamania/${ROUTE.FAVORITES}`}
+          pagination={location.pathname === ROUTE.FAVORITES}
           routerLink={ROUTE.FAVORITES}
         />
         <AsideLink
           text="Settings"
           icon={<Settings />}
-          pagination={location.pathname === `/moviemegamania/${ROUTE.SETTINGS}`}
+          pagination={location.pathname === ROUTE.SETTINGS}
           routerLink={ROUTE.SETTINGS}
         />
       </LinksContainer>

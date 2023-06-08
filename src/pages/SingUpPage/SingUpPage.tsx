@@ -7,7 +7,7 @@ export const SingUpPage = () => {
   const { isLogin } = useAppSelector(selectUser);
   const navigate = useNavigate();
   if (isLogin) {
-    navigate("");
+    navigate("/");
   }
   return <SignUpForm />;
 };

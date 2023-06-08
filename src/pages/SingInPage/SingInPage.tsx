@@ -25,7 +25,7 @@ export const SingInPage = () => {
   };
 
   if (isLogin) {
-    navigate("");
+    navigate("/");
     if (localStorage.length) {
       dispatch(setFavoritesPage(JSON.parse(localStorage.favorites)));
     }
